@@ -1,0 +1,6 @@
+<div class="form-group" [formGroup]="group" [id]="field.fieldId" *ngIf="field.isVisibleByDefault">
+    <label>{{field.displayCode}}</label>
+    <select class="form-control" name="{{field.fieldName}}" [formControlName]="field.fieldName" [(ngModel)]="field.defaultValue">
+      <option *ngFor="let item of field.options" [value]="item.id">{{item.text}}</option>
+    </select>
+</div>

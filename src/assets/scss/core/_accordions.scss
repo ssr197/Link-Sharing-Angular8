@@ -1,0 +1,117 @@
+/*============ Accordions Css Style ============*/
+.accordion-wrapper {
+    .card {
+        border-radius: 0;
+        .card-header {
+            padding: 0;
+            position: relative;
+            &[class*="bg-"] {
+                color: $white;
+            }
+            &:first-child {
+                border-radius: 0;
+            }
+            a {
+                padding: 20px 15px;
+                display: block;
+                font-size:0.875rem;
+                color: inherit;
+            }
+        }
+    }
+    p {
+        font-size: 1rem;
+    }
+}
+.accordion-toggle::before {
+    font-family: 'simple-line-icons';
+    font-size: 0.65rem;
+    position: absolute;
+}
+.basic-icon-accordion {
+  .card{
+    margin-bottom:$card-spacer-x;
+    .card-header {
+      background: $panel-heading-bg;
+      .accordion-toggle.collapsed::before {
+        content: "\e095";
+        border-radius: 0;
+      }
+      .accordion-toggle {
+        color: $from-label-color;
+        font-weight:$font-weight-bold;
+        font-size: 0.875rem;
+        padding-left: 1rem;
+        &::before {
+          content: "\e615";
+          left: 10px;
+          top: 10px;
+        }
+      }
+    }
+  }
+}
+.accordion-with-arrow {
+  .card{
+    margin-bottom:$card-spacer-x;
+    .card-header {
+      padding:0.2rem 0.5rem;
+      background: $panel-heading-bg;
+      h5{
+        margin: 0px;
+        .accordion-toggle.collapsed::before {
+          content: "\e604";
+          border-radius: 0;
+        }
+        .accordion-toggle {
+          color: $from-label-color;
+          font-weight:$font-weight-bold;
+          font-size:0.875rem;
+          padding-left: 1rem;
+          &::before {
+            content: "\e607";
+            left: 10px;
+            top: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/*============ Accordions Mega menu ============*/
+.right-icon-accordion {
+    .card {
+        border: none;
+        border-bottom: 1px solid $input-border-color;
+    }
+    .card-body{
+        padding: 0 0 1rem 2rem;
+    }
+    .card-header {
+        background: transparent;
+        border:none;
+
+        a.accordion-toggle {
+            padding: 3px 15px 16px 33px;
+            color: $blue;
+            font-weight: normal;
+        }
+        .accordion-toggle.collapsed::before {
+            content: "+";
+            border-radius: 0;
+            font-family: roboto;
+        }
+        .accordion-toggle {
+            &::before {
+                content: "-";
+                left: 0px;
+                top: -3%;
+                font-family: roboto;
+            }
+        }
+    }
+}
+

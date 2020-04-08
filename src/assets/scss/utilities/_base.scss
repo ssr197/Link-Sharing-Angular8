@@ -1,0 +1,314 @@
+//Basics bg classes color text fonts
+.bg-primary,
+.bg-success,
+.bg-inverse,
+.bg-info,
+.bg-warning,
+.bg-danger,
+.bg-green,
+.bg-yellow {
+    color: $white!important;
+}
+
+.bg-grey {
+    color: $gray-800;
+}
+table{
+    table-layout: auto;
+}
+//Font size in responsive
+html {
+    font-size: $font-size-sm;
+}
+
+@media(max-width:1366px) {
+    html {
+        font-size: $font-size-sm - 1;
+    }
+}
+
+@media(max-width:1280px) {
+    html {
+        font-size: $font-size-sm - 1;
+    }
+}
+
+@media(max-width:991px) {
+    html {
+        font-size: $font-size-sm - 2;
+    }
+}
+
+//List style
+.list-item-border {
+    li {
+        border-bottom: 1px solid $input-border-color;
+    }
+}
+
+.list-item-space {
+    li {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
+.relative {
+    position: relative;
+}
+
+//Space Bottom for max .md class
+.pb-md-1 {
+    padding-bottom: 0.3rem;
+}
+
+.pb-md-2 {
+    padding-bottom: 0.6rem;
+}
+
+.pb-md-3 {
+    padding-bottom: 1.2rem;
+}
+
+
+
+.pb-md-5 {
+    padding-bottom: 3.6rem;
+}
+
+.p-0, .no-padding {
+  padding: 0px !important; }
+
+.p-t-0 {
+  padding-top: 0px !important; }
+
+.p-l-0 {
+  padding-left: 0px !important; }
+
+.p-r-0 {
+  padding-right: 0px !important; }
+
+.p-t-10 {
+  padding-top: 10px !important; }
+
+.p-5 {
+  padding: 5px !important; }
+
+.p-10 {
+  padding: 10px !important; }
+
+.p-15 {
+  padding: 15px !important; }
+
+.p-20 {
+  padding: 20px !important; }
+
+.p-l-10 {
+  padding-left: 10px !important; }
+
+.p-r-10 {
+  padding-right: 10px !important; }
+
+.p-b-0 {
+  padding-bottom: 0px !important; }
+
+.p-b-10 {
+  padding-bottom: 10px !important; }
+
+.p-l-5 {
+  padding-left: 5px !important; }
+
+.p-r-5 {
+  padding-right: 5px !important; }
+
+.p-l-15 {
+  padding-left: 15px !important; }
+
+.p-r-15 {
+  padding-right: 15px !important; }
+
+.m-0 {
+  margin: 0px !important; }
+
+.m-r-5 {
+  margin-right: 5px; }
+
+.m-r-10 {
+  margin-right: 10px; }
+
+.m-r-15 {
+  margin-right: 15px !important; }
+
+.m-l-5 {
+  margin-left: 5px; }
+
+.m-l-10 {
+  margin-left: 10px; }
+
+.m-l-15 {
+  margin-left: 15px; }
+
+.m-t-5 {
+  margin-top: 5px !important; }
+
+.m-t-0 {
+  margin-top: 0px !important; }
+
+.m-t-10 {
+  margin-top: 10px !important; }
+
+.m-t-15 {
+  margin-top: 15px !important; }
+
+.m-t-20 {
+  margin-top: 20px !important; }
+
+.m-t-30 {
+  margin-top: 30px !important; }
+
+.m-t-40 {
+  margin-top: 40px !important; }
+
+.m-b-0 {
+  margin-bottom: 0px !important; }
+
+.m-b-5 {
+  margin-bottom: 5px; }
+
+.m-b-10 {
+  margin-bottom: 10px; }
+
+.m-b-15 {
+  margin-bottom: 15px; }
+
+.m-b-20 {
+  margin-bottom: 20px; }
+
+.m-b-25 {
+  margin-bottom: 25px; }
+
+.m-b-30 {
+  margin-bottom: 30px !important; }
+
+.m-5 {
+  margin: 5px !important; }
+
+.m-10 {
+  margin: 10px !important; }
+
+.m-15 {
+  margin: 15px !important; }
+
+.m-20 {
+  margin: 20px !important; }
+
+// pv Mat Card style
+.pv-card-inner,
+.flex-align {
+    align-items: center;
+}
+
+.flex-align-top {
+    align-items: flex-start;
+}
+
+
+
+.pv-card-content-sm {
+    padding: 0.5rem 0 0;
+}
+
+.pv-card-content {
+    padding: 1.3rem 0 1rem 0;
+}
+
+.pv-card-footer {
+    .mat-divider {
+        padding: 0.3em
+    }
+}
+
+// List
+.pv-list {
+    list-style: none;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+    >li {
+        margin-bottom: 1rem;
+    }
+}
+
+// Helper classes
+
+.over-visible{
+    overflow: visible !important;
+}
+.box-inset {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3) inset;
+}
+
+.pv-span {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.pv-block {
+    display: block;
+}
+
+.shadow-none {
+    box-shadow: none!important;
+}
+
+.background-none {
+    background-color: transparent!important;
+}
+
+//Custom grid classes for lg to md
+@media (min-width:992px) and (max-width:1500px) {
+    .col-half-lg-down {
+        -moz-box-flex: 0;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .col-quad-lg-down {
+        -moz-box-flex: 0;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .col-full-lg-down {
+        -moz-box-flex: 0;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .col-12-lg-down {
+        -moz-box-flex: 0;
+        flex: 0 0 12%;
+        max-width: 12%;
+    }
+    .col-one-half-lg-down {
+        -moz-box-flex: 0;
+        flex: 0 0 33%;
+        max-width: 33%;
+    }
+    .mb-5-down {
+        margin-bottom: 3.6rem !important;
+    }
+}
+
+@media(max-width:992px) {
+    .over-auto {
+        overflow: auto;
+    }
+    .mb-5-down {
+        margin-bottom: 3.6rem !important;
+    }
+}
+
+@media(max-width:768px) {
+    .d-none-sm {
+        display: none !important;
+    }
+
+}

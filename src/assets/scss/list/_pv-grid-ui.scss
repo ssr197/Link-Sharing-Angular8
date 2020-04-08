@@ -1,0 +1,52 @@
+.dataTable {
+    box-shadow: 0 0 5px #d2d2d2 !important;
+    > thead {
+      th {
+        padding-top: 4px !important;
+        padding-bottom: 4px !important;
+      }
+    }
+    > tbody {
+      > tr {
+        .btn-action{
+          display: none;
+        }
+        &:hover {
+          background: $blueRowHighlighter !important;
+          .btn-action{
+            display: block;
+          }
+        }
+      }
+      tr.odd {
+        &:hover {
+          background: $blueRowHighlighter !important;
+          .cl-ic-more {
+            background: $blueRowHighlighter !important;
+          }
+        }
+      }
+      tr.even {
+        &:hover {
+          background: $blueRowHighlighter !important;
+          .cl-ic-more {
+            background: $blueRowHighlighter !important;
+          }
+        }
+      }
+    }
+  }
+.dataTables_length {
+    margin: 5px;
+    float: right;
+    label {
+      font-weight: normal;
+    }
+    select {
+      height: 22px;
+      line-height: 24px;
+    }
+  }
+.ps__rail-x {
+  left: 0px !important;
+}

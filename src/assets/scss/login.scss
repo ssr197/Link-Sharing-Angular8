@@ -1,0 +1,155 @@
+@import "variables/base";
+html {
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  background: #136098 url('../images/background.jpg') no-repeat center top;
+  background-position: fixed;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#loginStyle {
+  background-color: $white;
+  border-radius: 8px;
+  box-shadow: 3px 3px 7px 0 rgba(0, 0, 0, 0.25);
+  top: 50%;
+  left: 50%;
+  height: 280px;
+  width: 550px;
+  margin: 140px auto;
+}
+
+#loginTable {
+  width: 550px;
+  height: 280px;
+}
+
+#loginHeader {
+  position: relative;
+  background-color: #999;
+  border-radius: 8px 8px 0px 0px;
+  height: 66px;
+  vertical-align: top;
+  h3 {
+    color: #eee;
+    font-size: 20px;
+    line-height: 70px;
+  }
+  .pvLogo {
+    float: left;
+    padding: 10px;
+    img {
+      max-height: 50px;
+    }
+  }
+  .header-lbl {
+    text-align: right;
+    float: right;
+    color: #eee;
+    font-size: 20px;
+    line-height: 70px;
+    padding-right: 30px;
+  }
+}
+
+#loginLogo {
+  position: absolute;
+  margin-top: -10px;
+  margin-left: 10px;
+  height: 60px;
+  width: 114px;
+}
+
+#loginLabel {
+  position: absolute;
+  top: 20px;
+  left: 140px;
+  color: #eee;
+  font-size: 20px;
+  font-variant: normal;
+  font-weight: lighter;
+}
+
+#loginFooter {
+  background-color: #e8e8e8;
+  border-radius: 0 0 8px 8px;
+  height: 66px;
+}
+
+.loginFieldUser {
+  background-color: $white;
+  border: 1px solid $grey;
+  width: 490px;
+  margin-top: 32px;
+  margin-left: 30px;
+  line-height: 20px;
+  padding: 4px 6px;
+  font-size: $appFontSize;
+}
+
+.loginFieldPass {
+  background-color: $white;
+  border: 1px solid $grey;
+  width: 490px;
+  margin-top: 12px;
+  margin-left: 30px;
+  line-height: 20px;
+  padding: 4px 6px;
+  font-size: $appFontSize;
+}
+
+#loginUserContainer, #loginPassContainer {
+  height: 74px;
+}
+
+#loginSubmit {
+  background: $primary url("../images/pv-btn-bg.jpg") repeat-x center bottom;
+  border: 1px solid $primary !important;
+  color: $white;
+  font-weight: bold;
+  font-size: 18px;
+  border: 1px solid #cb8;
+  border-radius: 2em;
+  margin-top: 11px;
+  margin-left: 207px;
+  height: 42px;
+  width: 136px;
+}
+
+.btn-login {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 11px;
+  margin-left: 207px;
+  height: 44px;
+  width: 136px;
+}
+
+.btn-facebook {
+  background: #3B5999;
+  color: $white;
+  margin: 15px 0;
+}
+
+.btn-google {
+  background: #D54135;
+  color: $white;
+  margin: 15px 0;
+}
+.login_message{
+  margin:20px 0;
+  font-size: 13px;
+  color: #ddd;
+}

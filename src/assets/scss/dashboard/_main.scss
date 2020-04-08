@@ -1,0 +1,164 @@
+@import "../variables/base";
+.#{$prefix}dashboard {
+  padding: 0px 10px 10px 10px;
+  .page-title-box {
+    margin-bottom: 10px;
+  }
+  .card-box {
+    padding: 10px;
+    margin-bottom: 0px;
+    margin-top: 8px;
+  }
+
+  .widget-simple-chart {
+    h5 {
+      font-size: $appFontSize;
+      text-transform: uppercase;
+    }
+    h1 {
+      border-top-width: 3px;
+      border-top-style: solid;
+      padding-top: 10px;
+    }
+  }
+  .panel {
+    @include border-radius(8px);
+  }
+
+  .ui-sortable-handle {
+    cursor: auto;
+    .#{$prefix}sec-heading, .panel .panel-heading {
+      cursor: move;
+    }
+  }
+  .ui-draggable-handle .panel-heading {
+    cursor: move;
+  }
+  .#{$prefix}sec-heading .panel-title {
+    line-height: 20px;
+    display: inline-block;
+  }
+  .panel-heading a i {
+    display: inline-block;
+    color: $appFontColor;
+    margin: 0 2px;
+    font-size: 20px;
+    line-height: 20px;
+    &.md-fullscreen, &.md-fullscreen-exit {
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+  .panel-title {
+    color: $appFontColor;
+  }
+  .src-widget-field {
+    margin: 10px 0;
+    .form-control {
+      height: 30px;
+    }
+    textarea {
+      height: 80px !important;
+      margin-bottom: 10px;
+    }
+  }
+  .widget-ht-sm {
+    height: 150px;
+  }
+  .widget-ht-md {
+    min-height: 250px;
+  }
+  .widget-ht-lg {
+    height: 300px;
+  }
+  .#{$prefix}table-scroll {
+    box-shadow: none !important;
+    margin: 0px !important;
+  }
+
+  .#{$prefix}caselist-top-fixed{
+    position: inherit !important;
+    background: transparent !important;
+  }
+  .#{$prefix}caselist-fixed-table{
+    margin-top:0px !important;
+  }
+
+  .DTFC_ScrollWrapper{
+    .DTFC_RightWrapper{
+      .DTFC_RightBodyLiner{
+        overflow-y: hidden !important;
+      }
+    }
+    .DTFC_LeftWrapper{
+      .DTFC_LeftBodyLiner{
+        overflow-y: hidden !important;
+      }
+    }
+  }
+}
+
+.dashboard-widget-config {
+  padding: 5px !important;
+}
+
+.#{$prefix}dashboard-config-panel {
+  top: 110px !important;
+  .list-group-item, .panel-heading {
+    padding: 6px 10px;
+    cursor: pointer;
+  }
+  .list-group-item .badge {
+    float: right;
+  }
+}
+
+#wrapper.right-bar-enabled ##{$prefix}dash-topMinWidget i {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+
+.#{$prefix}dash-inbox-icon i {
+  vertical-align: middle;
+}
+
+.sidebar-hidden {
+  width: 50px;
+  height: 50px;
+  max-height: 50px;
+  overflow: hidden;
+  position: absolute;
+  top: -32px;
+  right: 60px;
+  z-index: 10;
+}
+
+.showIcon {
+  display: none;
+}
+
+.sidebar-hidden {
+  .showIcon {
+    display: inline-block;
+  }
+  .panel {
+    display: none;
+  }
+}
+
+.#{$prefix}dashboard-config-panel .list-group .list-hide {
+  transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  opacity: 0;
+}
+
+.chart-container {
+  width: 100% !important;
+  min-width: 100% !important;
+  .highcharts-container {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+}

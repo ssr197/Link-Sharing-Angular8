@@ -1,0 +1,11 @@
+<div class="form-group" [formGroup]="group" *ngIf="field.isVisibleByDefault">
+  <label *ngIf="formlayout !== 2">{{field.displayCode}}</label>
+  <!--<input [formControlName]="field.fieldName" [name]= "field.fieldName" [placeholder]="formlayout === 2?field.displayCode:''" [(ngModel)]="field.defaultValue" [type]="field.inputType" class="form-control" *ngIf="field.inputType !== 'file'" [readonly]="field.otherProperties.readOnly">-->
+  <tag-input [formControlName]="field.fieldName" [(ngModel)]='field.defaultValue' class="form-control"></tag-input>
+
+  <div *ngFor="let validation of field.validations;" >
+    <small class="pv-block"  class="text-danger" *ngIf="group.controls[field.fieldName].hasError(validation.name) && group.controls[field.fieldName].touched">
+      {{validation.message}}
+    </small>
+  </div>
+</div>

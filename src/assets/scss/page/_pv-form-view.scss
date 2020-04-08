@@ -1,0 +1,51 @@
+.#{$prefix}fullcase-view {
+  .form-horizontal {
+    .control-label {
+      display: block;
+      text-align: left !important;
+      margin-bottom: 0px !important;
+    }
+  }
+}
+.fc-view {
+  thead {
+    >tr {
+      >th {
+        &:first-child {
+          border-radius: 15px 0 0 0;
+        }
+        &:last-child {
+          border-radius: 0 15px 0 0;
+        }
+      }
+    }
+  }
+  table {
+    thead {
+      tr {
+        td {
+          border: none !important;
+        }
+      }
+    }
+  }
+  tbody {
+    >tr {
+      &:last-child {
+        >td {
+          &:first-child {
+            border-radius: 0 0 0 15px;
+            border: none;
+          }
+          &:last-child {
+            border-radius: 0 0 15px 0;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+  border: 1px solid #eee;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 7px 7px 10px #aaa;
+}

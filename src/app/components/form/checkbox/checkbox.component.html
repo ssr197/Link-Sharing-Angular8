@@ -1,0 +1,10 @@
+<div class="form-group" [formGroup]="group" [ngClass]="{checked: field.defaultValue, active: field.defaultValue}" [id]="field.fieldId" *ngIf="field.isVisibleByDefault">
+  <label *ngIf="formlayout == 2">{{field.displayCode}}</label>
+  <div >
+    <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
+      <input type="checkbox" class="custom-control-input" [name]= "field.fieldName" [formControlName]="field.fieldName" [(ngModel)]="field.defaultValue">
+      <span *ngIf="formlayout !== 2">{{field.displayCode}}</span>
+      <span class="custom-control-indicator"></span>
+    </label>
+  </div>
+</div>

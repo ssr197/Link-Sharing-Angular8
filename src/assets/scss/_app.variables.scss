@@ -1,0 +1,158 @@
+/*=========== Custom Variables PV App Global by Ritesh Kumar =============*/
+
+@import "variables/base";
+$prefix:                            "pv-";
+//--- html font ---//
+$html-font-size:                    16px;
+
+//--- block setting ---//
+$block-bg:							            #fff;
+$block-border-color:                #DEE4E8;
+$block-border-radius:               0;
+$block-margin:                      30px;
+$block-space-x:                     20px;
+$block-space-y:                     20px;
+
+//--- Block Title ---//
+$block-title-font-color:            inherit; // #414658;
+$block-title-font-size:             1.25rem;
+$block-title-space-x:               1.25rem;
+$block-title-space-y:               1.25rem;
+
+//--- Block Contextual ---//
+$block-contextual-link-color:       $gray-700;
+$block-contextual-link-size:        0.875rem;
+
+//--- Block full setting ---//
+$block-full-bg:                     $block-bg;
+$block-full-border-color:           $block-border-color;
+$block-full-border-radius:          .5rem;
+$block-full-margin:                 $block-margin;
+$block-full-padding:                null;
+
+//--- Button variables ----//
+$btn-font-size:                     0.875rem;
+$btn-transform:                     capitalize;
+$btn-font-color:                    $white;
+
+$btn-rounded-padding-horizontal:    2rem;
+
+$btn-square:                        0px;
+$btn-rounded-border-radius:         10em;
+$btn-circle:                        100px;
+$btn-grn-bg:                        $primary url("../img/pv-btn-bg.jpg") repeat-x center bottom;
+$btn-dark-grey-bg:                  #555f6f url("../img/pv-btn-bg2.jpg") repeat-x center bottom;
+$btn-grey-bg:                       #d6d6d6 url("../img/pv-btn-bg3.jpg") repeat-x center bottom;
+
+//--- Badges ---//
+$badge-font-size:                   0.875rem;
+
+$badge-padding-horizontal:          5px;
+$badge-padding-vertical:            3px;
+$badge-base-rounded:                5px;
+
+//--- Breadcrumb ---//
+
+$breadcrumb-font-size:				      1rem;
+$breadcrumb-font-color:				      #414658;
+
+//--- Chat variables ---//
+$chat-block-even-bg:                $orange;
+$chat-block-odd-bg:                 $blue;
+$chat-block-font-color:             #fff;
+
+$chat-item-padding:                 1rem;
+$chat-item-border:                  1px solid $input-border-color;
+$chat-item-bg-color:                #fff;
+
+//--- Dropdown variables ---//
+$dropdown-min-width:                null;
+$dropdown-padding-y:                5px;
+$dropdown-margin-top:               5px;
+$dropdown-heading-bg:               $gray-500;
+
+//-----Dark theme---//
+$dark-bg:                           #424242;
+$dark-bg-color:                     #fff;
+$dark-bg-container:                 #303030;
+$dark-border-color:                 rgba(0, 0, 0, 0.1);
+
+//--- Form input variables ---//
+$inut-padding-x:                    0.625rem;
+$input-padding-y:                   0.625rem;
+$input-line-height:                 null;
+$from-label-color:                  #414658;
+$input-square:                      0px;
+$input-rounded:                     10rem;
+
+//--- Header ---//
+$header-bg:                         #006fa6 url(../../assets/img/blue-header.jpg) no-repeat center -50px;
+$header-bg-orange:                  #e39300 url(../../assets/img/header-bg-oi.jpg) no-repeat center -50px;
+$header-bg-blue-color :             #0170a7;
+$header-height:                     4.5rem;
+$header-bottom-border:              1px solid $input-border-color;
+$header-pad-left-right:             1.3rem;
+
+//--- Ham icon ---//
+$ham-line-height:                   2px;
+$ham-icon-height-width:             45px;
+$ham-icon-border-radius:            100%;
+$ham-icon-line-color:               #818698;
+$ham-icon-border:                   1px solid #DEE4E8;
+$ham-icon-background-color:         #F5F9FB;
+
+//-- Header Menu --//
+$header-main-menu-color:            #fff;
+$dropdown-header-title-color:       #fff;
+//--- Progress Bar ---//
+$progress-rounded:                  1rem;
+$progress-square:                   0px;
+
+//--- Page title ---//
+$page-title-color:                  #414658;
+$page-title-font-size:              1.25rem;
+
+//--- Page info ---//
+$page-info-pad-space:               0.8rem 1.7rem;
+//--- Preloader variable ---//
+$perloader-bg-overlay:              rgba(20, 24, 40, 0.87);
+$preloader-bg-one:                  $blue;
+$preloader-bg-two:                  $orange;
+
+//--- SidebarWidths ---//
+$sidebar-width: 					          12.75rem;
+$sidebar-menu-text:         	      #fff;
+$sidebar-bg: 				                url(../../assets/img/blue-left-bg.png) bottom left no-repeat, linear-gradient(to right, #2a6ca3, #2a8fbb) !important;
+$panel-heading-bg:                  #fff url(../../assets/img/section-hd-bg.jpg) repeat-x center bottom;
+$sidebar-overlay-bg:                rgba(20, 24, 40, 0.87);
+$sidebar-font-size:                 0.875rem; // 50% relative to the container
+
+//--- Sidebar logo ---//
+$sidebar-logo-bg:                   $blue;
+$sidebar-icon-size:                 1.1rem;
+
+//--- Square box ---//
+$square-font-size:                  0.5; // 50% relative to the container
+$square-box:                     	  (10, 15, 20, 30, 40, 50, 60, 85, 100);
+
+//--- User section ---//
+$user-thumb-section-bg:             $blue;
+$user-name-color:                   #fff;
+$user-pad-y :                       1.5rem;
+$user-pad-x:                        1rem;
+
+$border-radius-base:                0;
+
+//--- Tour section ---//
+
+$tour-main-heading-color:           #fff;
+$tour-main-heading-bg-color:        $blue;
+$tour-main-heading-font-size:       18px;
+$tour-step-font-size:               1rem;
+$popover-body-bg-color:             $blue;
+$popover-body-font-color:           #fff;
+
+//-----Table Striped--------------//
+$oddBg:                             #f9f9f9;
+
+

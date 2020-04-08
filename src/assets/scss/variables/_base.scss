@@ -1,0 +1,208 @@
+//PV App Global UI by Ritesh Kumar Singh
+$prefix: "pv-";
+$primary:#7aba2e;
+$grey:#ccc;
+$darkGrey:#333;
+$success:#00b19d;
+$red:#f11924;
+$blue:#007cbc;
+$pink:#f76397;
+$green:#96ba36;
+$sky:#3ddcf7;
+$orng:#ffaa00;
+$purple:#8973b3;
+$bodyBg:#e1e2e3;
+$htmlBg:#e0e1e3;
+$white:#fff;
+$blthemeBg:#d4e8ef;
+$blthemeSidebar:#167cad;
+$codeDefColor:#5d9cec;
+$codeBg:#f4f8fb;
+$bgDanger:#ef5350;
+
+$bgGrey:#d4d5d7;
+$bgrowStrip:#f5f5f5;
+$bordColor:#d2d2d2;
+$bordLightColor:#efefef;
+$bordDarkColor:#686868;
+
+$odd:#f4f5f7;
+$sortedColHeadBg:#ebebeb;
+$even:#fff;
+$dueColor:#d13636;
+$appFont:'Open Sans', sans-serif;
+$appFontColor:#1e1e1e;
+
+$appHeadingFontColor:#505458;
+$appHeadingLightGrey:#444444;
+$appFooterColor:#58666e;
+$appFontSize:14px;
+$appFontSizeMed:13px;
+$appFontSizeSml:12px;
+$appFontSizeXSml:11px;
+$appFontSizelg:18px;
+$appFontSizeXlg:24px;
+
+$blueRowHighlighter: #DBf1FC;
+$orangeRowHighlighter: #fff6ea;
+$sidebarWidth: 550px;
+$sidebarInnerWidth: 190px;
+$xsColWidth:65px;
+$smColWidth:100px;
+$mdColWidth:150px;
+$lgColWidth:200px;
+$xlColWidth:300px;
+
+$btnGridBlueBg: #3579ba;
+$btnGridBlueColor: #DBf1FC;
+
+$panelHeadingBg: #fff url(../../img/section-hd-bg.jpg) repeat-x center bottom;
+// CSS3 MIXIN
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin border-top-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+   -webkit-border-top-left-radius: $radius;
+   border-top-left-radius: $radius;
+   background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+     -webkit-border-top-right-radius: $radius;
+     border-top-right-radius: $radius;
+     background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+   -webkit-border-bottom-left-radius: $radius;
+   border-bottom-left-radius: $radius;
+   background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+     -webkit-border-top-left-radius: $radius;
+     border-top-left-radius: $radius;
+     background-clip: padding-box;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+      -webkit-box-shadow:$top $left $blur $color #{$inset};
+      -moz-box-shadow:$top $left $blur $color #{$inset};
+      box-shadow:$top $left $blur $color #{$inset};
+    }
+@mixin box-shadow-none(){
+  -webkit-box-shadow:none;
+  -moz-box-shadow:none;
+  box-shadow:none;
+}
+
+@mixin transition($args) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin transform($args) {
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+  -o-transform: $args;
+  transform: $args;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+@mixin padding($top, $right, $bottom, $left){
+  padding-top:$top;
+  padding-right:$right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+@mixin paddingAll($padding){
+  padding:$padding;
+}
+
+@mixin margin($top, $right, $bottom, $left){
+  margin-top:$top;
+  margin-right:$right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+@mixin marginAll($margin) {
+  margin:$margin;
+}
+@mixin border($width, $type, $color){
+  border:$width $type $color;
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+
+// Animation
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+// For Nested classes of Blocks
+
+@mixin element($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+@mixin modifier($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}

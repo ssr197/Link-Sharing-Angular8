@@ -1,0 +1,144 @@
+@import "../variables/base";
+
+.datepicker {
+  padding: 0px;
+  th {
+    font-size: $appFontSize !important;
+  }
+  table tr td {
+    &.today, &.selected {
+      background-image: none;
+      &:hover {
+        background-image: none;
+      }
+      &.disabled {
+        background-image: none;
+        &:hover {
+          background-image: none;
+        }
+      }
+    }
+    span.active {
+      background-image: none;
+      &:hover {
+        background-image: none;
+      }
+      &.disabled {
+        background-image: none;
+        &:hover {
+          background-image: none;
+        }
+      }
+      &:hover, &.disabled:hover, &:active, &:hover:active {
+        background-color: #e69900;
+      }
+      &.disabled {
+        &:active, &:hover:active {
+          background-color: #e69900;
+        }
+      }
+      &.active, &:hover.active {
+        background-color: #e69900;
+      }
+      &.disabled {
+        &.active, &:hover.active {
+          background-color: #e69900;
+        }
+        background-color: #e69900;
+      }
+      &:hover.disabled {
+        background-color: #e69900;
+      }
+      &.disabled {
+        &.disabled, &:hover.disabled {
+          background-color: #e69900;
+        }
+      }
+      &[disabled], &:hover[disabled] {
+        background-color: #e69900;
+      }
+      &.disabled {
+        &[disabled], &:hover[disabled] {
+          background-color: #e69900;
+        }
+      }
+    }
+    &.active {
+      background-color: #e69900 !important;
+      background-image: none;
+      @include box-shadow-none();
+      text-shadow: none;
+      &:hover {
+        background-color: #e69900 !important;
+        background-image: none;
+        @include box-shadow-none();
+        text-shadow: none;
+      }
+      &.disabled {
+        background-color: #e69900 !important;
+        background-image: none;
+        box-shadow: none;
+        text-shadow: none;
+        &:hover {
+          background-color: #e69900 !important;
+          background-image: none;
+          @include box-shadow-none();
+          text-shadow: none;
+        }
+      }
+    }
+  }
+  thead tr:first-child th:hover, tfoot tr th:hover {
+    background-color: #e69900;
+  }
+
+}
+
+
+
+.datepicker-inline {
+  border: 2px solid #eeeeee;
+}
+
+.daterangepicker {
+  td.active {
+    background-color: #e69900;
+    border-color: #e69900;
+    &:hover {
+      background-color: #e69900;
+      border-color: #e69900;
+    }
+  }
+  .input-mini.active {
+    border: 1px solid #AAAAAA;
+  }
+  .ranges li {
+    @include border-radius(3px);
+    background-clip: padding-box;
+    color: #797979;
+    font-weight: 600;
+    font-size: $appFontSizeSml;
+  }
+  select {
+    &.hourselect, &.minuteselect, &.secondselect, &.ampmselect {
+      border: 1px solid #e3e3e3;
+      padding: 2px;
+      width: 60px;
+    }
+  }
+  .ranges li {
+    &.active, &:hover {
+      background-color: #e69900;
+      border: 1px solid #e69900;
+    }
+  }
+}
+
+.datepicker-icon, .addon-sml {
+  cursor: pointer;
+  @include paddingAll(4px);
+}
+
+.datepicker-icon i, .addon-sml i {
+  font-size: $appFontSizeSml;
+}

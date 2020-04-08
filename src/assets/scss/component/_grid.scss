@@ -1,0 +1,200 @@
+@import "../variables/base";
+.table {
+  margin-bottom: 10px;
+  padding: 2px;
+}
+
+tbody {
+  color: $appFontColor;
+}
+
+th {
+  color: #797979;
+  font-size: $appFontSize;
+}
+
+td {
+  font-size: $appFontSize;
+}
+
+.table > {
+  input[type=checkbox] {
+    margin: 0px;
+  }
+  tbody > tr > {
+    td, th {
+      border-top: 1px solid #f3f3f3;
+    }
+  }
+  tfoot > tr > {
+    td, th {
+      border-top: 1px solid #f3f3f3;
+    }
+  }
+  thead > tr > {
+    td {
+      border-top: 1px solid #f3f3f3;
+    }
+    th {
+      border-top: 1px solid #f3f3f3;
+      border-bottom: 2px solid #f3f3f3;
+      background: $white;
+    }
+  }
+  tbody > tr {
+    &.success > {
+      td, th {
+        background-color: rgba(0, 177, 157, 0.15);
+      }
+    }
+    > {
+      td.success, th.success {
+        background-color: rgba(0, 177, 157, 0.15);
+      }
+    }
+  }
+  tfoot > tr {
+    &.success > {
+      td, th {
+        background-color: rgba(0, 177, 157, 0.15);
+      }
+    }
+    > {
+      td.success, th.success {
+        background-color: rgba(0, 177, 157, 0.15);
+      }
+    }
+  }
+  thead > tr {
+    &.success > {
+      td, th {
+        background-color: rgba(0, 177, 157, 0.15);
+      }
+    }
+    > {
+      td.success, th.success {
+        background-color: rgba(0, 177, 157, 0.15);
+      }
+    }
+  }
+  tbody > tr {
+    &.info > {
+      td, th {
+        background-color: rgba(61, 220, 247, 0.15);
+      }
+    }
+    > {
+      td.info, th.info {
+        background-color: rgba(61, 220, 247, 0.15);
+      }
+    }
+  }
+  tfoot > tr {
+    &.info > {
+      td, th {
+        background-color: rgba(61, 220, 247, 0.15);
+      }
+    }
+    > {
+      td.info, th.info {
+        background-color: rgba(61, 220, 247, 0.15);
+      }
+    }
+  }
+  thead > tr {
+    &.info > {
+      td, th {
+        background-color: rgba(61, 220, 247, 0.15);
+      }
+    }
+    > {
+      td.info, th.info {
+        background-color: rgba(61, 220, 247, 0.15);
+      }
+    }
+  }
+  tbody > tr {
+    &.warning > {
+      td, th {
+        background-color: rgba(255, 170, 0, 0.15);
+      }
+    }
+    > {
+      td.warning, th.warning {
+        background-color: rgba(255, 170, 0, 0.15);
+      }
+    }
+  }
+  tfoot > tr {
+    &.warning > {
+      td, th {
+        background-color: rgba(255, 170, 0, 0.15);
+      }
+    }
+    > {
+      td.warning, th.warning {
+        background-color: rgba(255, 170, 0, 0.15);
+      }
+    }
+  }
+  thead > tr {
+    &.warning > {
+      td, th {
+        background-color: rgba(255, 170, 0, 0.15);
+      }
+    }
+    > {
+      td.warning, th.warning {
+        background-color: rgba(255, 170, 0, 0.15);
+      }
+    }
+  }
+  tbody > tr {
+    &.danger > {
+      td, th {
+        background-color: rgba(239, 83, 80, 0.15);
+      }
+    }
+    > {
+      td.danger, th.danger {
+        background-color: rgba(239, 83, 80, 0.15);
+      }
+    }
+  }
+  tfoot > tr {
+    &.danger > {
+      td, th {
+        background-color: rgba(239, 83, 80, 0.15);
+      }
+    }
+    > {
+      td.danger, th.danger {
+        background-color: rgba(239, 83, 80, 0.15);
+      }
+    }
+  }
+  thead > tr {
+    &.danger > {
+      td, th {
+        background-color: rgba(239, 83, 80, 0.15);
+      }
+    }
+    > {
+      td.danger, th.danger {
+        background-color: rgba(239, 83, 80, 0.15);
+      }
+    }
+  }
+}
+
+table.focus-on tbody tr.focused {
+  th, td {
+    background-color: #e69900;
+    color: $white;
+  }
+}
+
+.table-rep-plugin tbody th {
+  font-size: 10px;
+  font-weight: normal;
+}

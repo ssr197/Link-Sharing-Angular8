@@ -1,0 +1,10 @@
+<div *ngIf="message" [ngClass]="message.cssClass" class="alert-dismissible forceLineWrap">
+  <button type="button" class="close" data-dismiss="alert">
+    <span aria-hidden="true">×</span>
+    <span class="sr-only">Close</span>
+  </button>
+  <i class="fa fa-times-circle"></i>
+  {{message.text}}
+</div>
+
+

@@ -1,0 +1,12 @@
+@import "../variables/base";
+
+@media all and (-ms-high-contrast:none) {
+  .#{$prefix}list-table {
+    tbody {
+      tr.#{$prefix}caselist-secodary-view:last-child {
+        min-height: 200px !important;
+      }
+    }
+  }
+}
+

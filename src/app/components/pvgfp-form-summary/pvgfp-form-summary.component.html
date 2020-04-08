@@ -1,0 +1,78 @@
+<div class="card">
+  <div class="card-header pv-sec-heading">
+    <span class="rxmain-container-header-label rx-widget-title">{{'Form Summary'}}</span>
+  </div>
+  
+  <div class="card-body">
+    <form [formGroup]="formSummaryForm" (submit)="submit()">
+      <div class="row">
+        <div class="form-group col-md-3">
+          <label>Continuation sheets</label>
+          <input class="form-control" formControlName="continuationsheets">
+        </div>
+        <div class="form-group col-md-3">
+          <label>Contains cover sheets</label>
+          <input class="form-control" formControlName="containscoversheets">
+        </div>
+        <div class="form-group col-md-3">
+          <label>Continuation page header</label>
+          <input class="form-control" formControlName="continuationpageheader">
+        </div>
+        <div class="form-group col-md-3">
+          <label>Continuation page footer</label>
+          <input class="form-control" formControlName="continuationpagefooter">
+        </div>
+      </div>
+      <br>
+      <br>
+      <div formArrayName="pages">
+        <div class="row" *ngFor="let item of formSummaryForm['controls'].pages['controls']; let idx=index" [formGroupName]="idx">
+          <div class="form-group col-md-3">
+            <label>Page No.</label>
+            <input class="form-control" formControlName="pageno">
+          </div>
+          <div class="form-group col-md-3">
+            <label>Page type</label>
+            <input class="form-control" formControlName="pagetype">
+          </div>
+          <div class="form-group col-md-3">
+            <label>Repeatable page</label>
+            <input class="form-control" formControlName="repeatablepage">
+          </div>
+          <div class="form-group col-md-3">
+            <label>Page url</label>
+            <input class="form-control" formControlName="pageurl">
+          </div>
+          <div class="form-group col-md-3">
+            <label>Page header identifier</label>
+            <!-- <input class="form-control" formControlName="pageheaderidentifier"> -->
+            <tag-input class="form-control" formControlName="pageheaderidentifier"></tag-input>
+          </div>
+          <div class="form-group col-md-3">
+            <label>Page footer identifier</label>
+            <input class="form-control" formControlName="pagefooteridentifier">
+          </div>
+          <div class="form-group col-md-3">
+            <label>Section headers</label>
+            <input class="form-control" formControlName="sectionheaders">
+          </div>
+          <div class="form-group col-md-3">
+            <a (click)="delete(idx)" class="btn badge badge-danger"><i class="md md-plus" title="Add page info"></i>  Delete</a>
+          </div>
+          <br>
+        </div>
+      </div>
+  
+      <div class="modal-footer">
+        <div class="margin-top w-100">
+          <a (click)="addPage()" class="btn badge badge-blue"><i class="md md-plus" title="Add page info"></i>  Add page</a>
+          <!-- <span class="text-primary pull-left">Form Submitted Successfully!</span> -->
+          <button class="btn btn-primary pull-right" type="submit">
+            <!-- <span class="spinner-border spinner-border-sm mr-1"></span> -->
+            {{btnText}}
+          </button>
+        </div>
+    </div>
+    </form>
+  </div>
+</div>

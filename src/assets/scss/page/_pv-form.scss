@@ -1,0 +1,114 @@
+.form-pv {
+  .form-group {
+    [class*='col-'] {
+      margin-bottom: 5px !important;
+    }
+    .#{$prefix}labtest-table {
+      td {
+        [class*='col-'] {
+          margin-bottom: 5px !important;
+        }
+      }
+    }
+    margin-right: -10px;
+    margin-left: -10px;
+    margin-bottom: 0px;
+    [class*='col-'] {
+      margin-bottom: 5px;
+    }
+  }
+  .inner-table {
+    margin-top: 10px;
+    .panel-group {
+      margin-bottom: 0px;
+      .panel-heading {
+        background: #d4d5d7;
+        padding: 3px 8px;
+      }
+    }
+    .panel-heading {
+      .panel-title {
+        text-transform: none;
+        font-size: $appFontSize;
+      }
+    }
+  }
+}
+.#{$prefix}bce {
+  .panel-collapse {
+    margin-bottom: 10px;
+  }
+  .btn-addrow-top {
+    margin-right: 15px;
+  }
+}
+
+input[type="radio checkbox"] {
+  margin-right: 3px;
+}
+.inner-input-group {
+  label {
+    display: block;
+    text-align: left !important;
+    font-size: $appFontSize;
+    margin-bottom: 0px;
+    padding-top: 5px;
+  }
+  select {
+    border-color: #ccc;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    height: 24px;
+  }
+}
+.inner-input-group-checkbox {
+  label {
+    display: block;
+    text-align: left !important;
+    font-size: $appFontSize;
+    margin-bottom: 0px;
+  }
+}
+.speech {
+  border: 1px solid #DDD;
+  width: 300px;
+  padding: 0;
+  margin: 0;
+  input {
+    border: 0;
+    width: 240px;
+    display: inline-block;
+    height: 30px;
+  }
+  img {
+    float: right;
+    width: 40px;
+  }
+}
+.productPETemplate {
+  margin-bottom: 5px;
+  &:last-child {
+    margin-bottom: 0px !important;
+  }
+}
+
+.#{$prefix}reorder-sec a {
+  i {
+    font-weight: 600 !important;
+  }
+  &.btn-row-up {
+    transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  &.btn-row-down {
+    transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+  }
+}
+
+

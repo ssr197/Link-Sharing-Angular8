@@ -1,0 +1,80 @@
+.progress {
+  -webkit-box-shadow: none !important;
+  background-color: #f5f5f5;
+  box-shadow: none !important;
+  height: 10px;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  box-shadow: none;
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 12px;
+}
+
+.progress {
+  &.progress-sm {
+    height: 5px !important;
+    .progress-bar {
+      font-size: 8px;
+      line-height: 5px;
+    }
+  }
+  &.progress-md {
+    height: 15px !important;
+    .progress-bar {
+      font-size: 10.8px;
+      line-height: 14.4px;
+    }
+  }
+  &.progress-lg {
+    height: 20px !important;
+    .progress-bar {
+      font-size: $appFontSizeSml;
+      line-height: 20px;
+    }
+  }
+}
+
+.progress-bar-primary {
+  background-color: #e69900;
+}
+
+.progress-bar-success {
+  background-color: $success;
+}
+
+.progress-bar-info {
+  background-color: #4E78A0;
+}
+
+.progress-bar-warning {
+  background-color: #e69900;
+}
+
+.progress-bar-danger {
+  background-color: #CF5260;
+}
+
+.progress-bar-inverse {
+  background-color: #4c5667;
+}
+
+.progress-bar-purple {
+  background-color: #7575D1;
+}
+
+.progress-bar-pink {
+  background-color: $pink;
+}
+
+.progress-animated {
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: animationProgress;
+  -webkit-transition: 5s all;
+  animation-duration: 5s;
+  animation-name: animationProgress;
+  transition: 5s all;
+}

@@ -1,0 +1,223 @@
+.tabs {
+  background-color: $white;
+  margin: 0 auto;
+  padding: 0px;
+  position: relative;
+  white-space: nowrap;
+  width: 100%;
+  li.tab {
+    background-color: $white;
+    display: block;
+    float: left;
+    margin: 0;
+    text-align: center;
+    a {
+      -moz-transition: color 0.28s ease;
+      -ms-transition: color 0.28s ease;
+      -o-transition: color 0.28s ease;
+      -webkit-transition: color 0.28s ease;
+      color: #ee6e73;
+      display: block;
+      height: 100%;
+      text-decoration: none;
+      transition: color 0.28s ease;
+      width: 100%;
+      &.active {
+        color: #FDBB40  !important;
+      }
+    }
+  }
+  .indicator {
+    background-color: #FDBB40;
+    bottom: 0;
+    height: 2px;
+    position: absolute;
+    will-change: left, right;
+  }
+}
+
+.tabs-top .indicator {
+  top: 0;
+}
+
+.nav.nav-tabs + .tab-content {
+  background: $white;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+.tabs-vertical-env {
+  margin-bottom: 30px;
+  .tab-content {
+    background: $white;
+    display: table-cell;
+    margin-bottom: 30px;
+    padding: 30px;
+    vertical-align: top;
+  }
+  .nav.tabs-vertical {
+    display: table-cell;
+    min-width: 120px;
+    vertical-align: top;
+    width: 150px;
+    li {
+      &.active > a {
+        background-color: $white;
+        border: 0;
+      }
+      > a {
+        color: $darkGrey;
+        text-align: center;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.nav {
+  &.nav-tabs > li {
+    &.active > a {
+      background-color: $white;
+      border: 0;
+    }
+    > a {
+      background-color: transparent;
+      border-radius: 0;
+      border: none;
+      color: $darkGrey !important;
+      cursor: pointer;
+      line-height: 50px;
+      font-weight: 500;
+      padding-left: 20px;
+      padding-right: 20px;
+      &:hover {
+        color: #A8A8A8 !important;
+      }
+    }
+  }
+  &.tabs-vertical > li > a {
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    color: $darkGrey !important;
+    cursor: pointer;
+    line-height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    &:hover {
+      color: #A8A8A8 !important;
+    }
+  }
+}
+
+.tab-content {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  color: #777777;
+}
+
+.nav.nav-tabs {
+  > li:last-of-type a {
+    margin-right: 0px;
+  }
+  border-bottom: 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.navtab-custom li {
+  margin-bottom: -2px;
+  a {
+    border-top: 2px solid transparent !important;
+  }
+  &.active a {
+    border-top: 2px solid #7e7e7e !important;
+  }
+}
+
+.nav-tab-left.navtab-custom li {
+  a {
+    border: none !important;
+    border-left: 2px solid transparent !important;
+  }
+  &.active a {
+    border-left: 2px solid #7e7e7e !important;
+  }
+}
+
+.nav-tab-right.navtab-custom li {
+  a {
+    border: none !important;
+    border-right: 2px solid transparent !important;
+  }
+  &.active a {
+    border-right: 2px solid #7e7e7e !important;
+  }
+}
+
+.nav-tabs.nav-justified > .active > a {
+  border: none;
+  &:hover, &:focus {
+    border: none;
+  }
+}
+
+.tabs-vertical-env .nav.tabs-vertical li.active > a {
+  border: none;
+}
+
+.nav-tabs > li.active > a {
+  color: #7e7e7e !important;
+  &:focus, &:hover {
+    color: #7e7e7e !important;
+  }
+}
+
+.tabs-vertical > li.active > a {
+  color: #7e7e7e !important;
+  &:focus, &:hover {
+    color: #7e7e7e !important;
+  }
+}
+
+.#{$prefix}tab {
+  .panel-heading {
+    background: #d4d5d7 !important;
+    border-radius: 8px 8px 0 0;
+  }
+  .nav.nav-tabs {
+    >li.active {
+      >a {
+        background: #fff;
+        border-radius: 8px 8px 0 0;
+      }
+    }
+    + {
+      .tab-content {
+        border-radius: 0 8px 8px 8px;
+      }
+    }
+    >li {
+      >a {
+        font-size: 15px;
+        line-height: 35px !important;
+        background: $panelHeadingBg;
+        border-radius: 8px 8px 0 0;
+      }
+    }
+  }
+}
+
+.#{$prefix}tab-bordered {
+  .nav.nav-tabs {
+    >li.active {
+      >a {
+        border: 1px solid #d2d2d2;
+        border-bottom: 0px;
+      }
+    }
+    + {
+      .tab-content {
+        border: 1px solid #d2d2d2;
+      }
+    }
+  }
+}

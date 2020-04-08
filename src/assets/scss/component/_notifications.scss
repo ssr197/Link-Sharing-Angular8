@@ -1,0 +1,48 @@
+
+.notifyjs-metro-base {
+  position: relative;
+  min-height: 52px;
+  min-width: 250px;
+  color: #444;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+  -webkit-animation: dropdownOpen 0.3s ease-out;
+  -o-animation: dropdownOpen 0.3s ease-out;
+  animation: dropdownOpen 0.3s ease-out;
+  .image {
+    display: table;
+    position: absolute;
+    height: auto;
+    width: auto;
+    left: 25px;
+    top: 50%;
+    font-size: $appFontSizeXlg;
+    @include transform(translate(-50%, -50%))
+  }
+  .text-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    margin: 10px 10px 10px 52px;
+    clear: both;
+  }
+  .title {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  .text {
+    font-size: $appFontSizeSml;
+    font-weight: normal;
+    max-width: 360px;
+    vertical-align: middle;
+  }
+}
+
+.notifyjs-metro-cool {
+  color: #F8B540 !important;
+  background-color: #4A525F;
+  border: 1px solid #4A525F;
+}

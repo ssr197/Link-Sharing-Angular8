@@ -1,0 +1,13 @@
+<div class="row m-b-10 pv-inner-shadow-box" id="coordinateList">
+    <div class="col-md-12">
+      <label><strong>Matrix Coordinates</strong></label>
+    </div>
+    <div class="col-md-12">
+      <div class="matrix-coord-box">
+        <span class="btn-sm badge-pill badge-outline-primary text-dark"  *ngFor="let i = index; let item of coordinateList">
+          <a class="element" (click)=getCoordinate(i)>{{item}}</a>
+          <a (click)="deleteCoordinate(i)" class=" badge-pill badge-sm text-white badge-dark ml-1"> <i class="md md-close delete"></i></a>
+        </span>
+      </div>
+    </div>
+</div>

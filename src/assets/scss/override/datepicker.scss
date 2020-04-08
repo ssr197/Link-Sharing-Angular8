@@ -1,0 +1,98 @@
+@import "../variables/base";
+.fuelux{
+  .rx-datepicker {
+      border: 1px solid #d2d2d2;
+      min-height: 20px;
+      padding: 0;
+      max-width: 230px;
+    .datepicker-calendar-header {
+      .next, .prev {
+        background: transparent;
+        height: auto;
+        font-size: 22px;
+        line-height: $appFontSize;
+      }
+      .next:hover, .prev:hover {
+        background: transparent;
+      }
+      .title {
+        font-size: $appFontSize;
+        line-height: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        max-width: 135px;
+        &:hover {
+          color: #000;
+          text-decoration: none;
+        }
+      }
+    }
+    .datepicker-calendar {
+      padding: 8px 8px 0;
+      min-height: inherit;
+    }
+    .datepicker-calendar-wrapper {
+      border: 1px solid #d2d2d2;
+      min-height: 20px;
+      padding: 0;
+      max-width: 230px;
+    }
+    .datepicker-calendar-days {
+      td {
+        &.last-month, &.next-month {
+          background: transparent;
+        }
+        &.last-month button, &.next-month button {
+          background: transparent;
+          color: #ddd;
+          cursor: default;
+        }
+        height: 24px;
+      }
+      th {
+        height: 24px;
+        height: 24px !important;
+      }
+      > thead > tr > th:hover {
+        background: transparent;
+        background-color: transparent;
+        color: #000;
+      }
+      td.current-day span {
+        background-color: #fde19a;
+        background-image: -moz-linear-gradient(to bottom, #fdd49a, #fdf59a);
+        background-image: -ms-linear-gradient(to bottom, #fdd49a, #fdf59a);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fdd49a), to(#fdf59a));
+        background-image: -webkit-linear-gradient(to bottom, #fdd49a, #fdf59a);
+        background-image: -o-linear-gradient(to bottom, #fdd49a, #fdf59a);
+        background-image: linear-gradient(to bottom, #fdd49a, #fdf59a);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdd49a', endColorstr='#fdf59a', GradientType=0);
+        border-color: #fdf59a #fdf59a #fbed50;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+        color: #000;
+      }
+    }
+    .datepicker-calendar-footer {
+      display: none;
+      margin: 0 -8px;
+    }
+    .datepicker-wheels-month ul li button, .datepicker-wheels-year ul li button {
+      font-size: $appFontSize;
+      line-height: 18px;
+    }
+    .datepicker-wheels-month .header, .datepicker-wheels-year .header {
+      font-size: $appFontSize;
+      line-height: 22px;
+    }
+    .datepicker-calendar-days {
+      height: 150px;
+      td {
+        b, button {
+          height: 20px;
+        }
+      }
+    }
+  }
+}

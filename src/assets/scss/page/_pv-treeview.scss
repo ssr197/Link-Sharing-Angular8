@@ -1,0 +1,82 @@
+.#{$prefix}fullcase-treeview {
+  width: 190px;
+  max-width: 190px;
+  position: fixed;
+  margin-left: -10px;
+  top: 120px;
+  overflow-y: auto;
+  bottom: 0px;
+  z-index: 6;
+  &:hover {
+    overflow: auto;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #fff;
+    max-height: 5px;
+  }
+  &::-webkit-scrollbar {
+    width: 5px;
+    background-color: #fff;
+    max-height: 5px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #98a6ad;
+    max-height: 5px;
+  }
+}
+
+.icon-toggle-treeview{
+  position: absolute;
+  right: 5px;
+  font-size: 20px;
+  top: 5px;
+  z-index: 999;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  line-height: 16px;
+  border-radius: 50%;
+  color: $white;
+  text-align: center;
+}
+
+.#{$prefix}fullcase-treeview, .#{$prefix}fullcase-container{
+  transition: all 0.5s;
+}
+
+#wrapper.treeview-collapse .#{$prefix}fullcase-treeview{
+  margin-left: -240px;
+  overflow: visible !important;
+}
+
+#wrapper.treeview-collapse .#{$prefix}fullcase-container{
+  margin-left: 10px;
+}
+
+#wrapper.treeview-collapse .icon-toggle-treeview{
+  transform: rotate(180deg);
+  right:-60px;
+  color: #337ab7;
+}
+
+.jstree-wholerow {
+  display: none;
+}
+
+.#{$prefix}tree li a.jstree-clicked {
+  font-weight: bold;
+  background-color:transparent;
+}
+
+.jstree-hidden {
+  display: none;
+}
+.#{$prefix}tree, .#{$prefix}tree ul {
+  list-style-type: none;
+  position: relative;
+  padding: 0;
+  cursor: default;
+}

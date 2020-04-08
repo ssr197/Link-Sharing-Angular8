@@ -1,0 +1,9 @@
+<div class="input-group">
+    <select class="form-control" [(ngModel)]="currGroupId" (change)="onChange()">
+    <option *ngFor="let groupId of groupList" [value]="groupId.id">{{'Group'+groupId.id}}</option>
+  </select>
+    <div class="input-group-append" *ngIf="showBtn">
+        <button class="btn btn-outline-primary first" type="button" (click)="openGOModal()"><i class="fa fa-plus"></i></button>
+        <button class="btn btn-outline-dark last" type="button" (click)="openEditModal()"><i class="fa fa-edit"></i></button>
+    </div>
+</div>

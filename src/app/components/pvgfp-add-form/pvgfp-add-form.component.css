@@ -1,0 +1,12 @@
+body {
+    font-size: 0.875rem;
+}
+
+.leftMargin {
+    margin-left: 20px;
+    background-color: olive;
+}
+
+.card {
+    margin-bottom: 0.4rem;
+}

@@ -1,0 +1,101 @@
+.caselist-config-panel {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0px 0px 0px 5px;
+  .#{$prefix}list-config-action {
+    position: fixed;
+    text-align: left;
+    height: 26px;
+    border-bottom: 1px solid #efefef;
+    width: $sidebarWidth;
+    background: #f3f3f3;
+    z-index: 9;
+    a {
+      display: inline-block;
+      margin-left: 5px;
+    }
+  }
+  &.right-bar.#{$prefix}custom-panel-related {
+    position: absolute !important;
+    top: 30px !important;
+    padding: 0px;
+    .#{$prefix}list-config-action {
+      position: absolute;
+    }
+  }
+  .#{$prefix}grid-setting-box{
+    background: $white;
+    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
+    display: block;
+    .#{$prefix}list-group {
+      margin: 25px -15px 1px -15px !important;
+      display: table;
+      .inner-shadow-box {
+        box-shadow: 0px 2px 6px #aaa;
+        display: table-cell;
+        max-width: $sidebarInnerWidth;
+
+        a, a:first-child {
+          padding: 5px 10px;
+          font-size: $appFontSize;
+        }
+        .phead {
+          padding: 5px;
+          font-size: $appFontSize;
+          font-weight: bold;
+          color: #fff;
+        }
+        .list-group-primary, .list-group-secondary {
+          background: #fff;
+          padding: 5px;
+        }
+        .list-group-optional {
+          padding: 5px;
+          background: #fff;
+        }
+        .phead-1 {
+          color: #72b71c;
+        }
+        .phead-2 {
+          color: #337ab7;
+        }
+        .phead-3 {
+          color: #4c5667;
+        }
+        .list-group-primary a, .list-group-secondary a, .list-group-optional a {
+          display: inline-block;
+          margin: 2px 4px;
+          padding: 1px 5px;
+          border: 0px;
+          font-size: 13px;
+          border-radius: 4px;
+        }
+        .list-group-primary a {
+          color: #72b71c;
+          border: 1px solid #72b71c;
+        }
+        .list-group-secondary a {
+          color: #337ab7;
+          border: 1px solid #337ab7;
+        }
+        .list-group-optional a {
+          color: #4c5667;
+          border: 1px solid #4c5667;
+        }
+      }
+    }
+  }
+  &.ps{
+    overflow: auto !important;
+  }
+  &::-webkit-scrollbar-track {
+    opacity: 0;
+  }
+  &::-webkit-scrollbar {
+    width: 0px;
+    opacity: 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    opacity: 0;
+  }
+}

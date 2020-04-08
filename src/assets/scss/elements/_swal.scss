@@ -1,0 +1,20 @@
+body.swal2-shown.swal2-height-auto{
+  height: 100% !important;
+}
+.swal2-popup.swal2-modal{
+  max-width: 400px;
+
+  .swal2-title{
+    font-size: 1.5rem;
+  }
+  #swal2-content{
+    font-size: .875rem;
+  }
+  button.swal2-styled{
+    font-size: .875rem;
+    padding: 2px 12px;
+  }
+  button.swal2-confirm{
+    background-color: $primary;
+  }
+}

@@ -1,0 +1,28 @@
+.sweet-alert {
+  h2 {
+    font-size: 22px !important;
+  }
+  p {
+    font-size: $appFontSize !important;
+    line-height: 22px;
+  }
+  .icon {
+    &.success {
+      .placeholder {
+        border: 4px solid rgba(0, 177, 157, 0.3);
+      }
+      .line {
+        background-color: $success;
+      }
+    }
+    &.warning {
+      border-color: $orng;
+    }
+    &.info {
+      border-color: $sky;
+    }
+  }
+  .btn-warning:focus, .btn-info:focus, .btn-success:focus, .btn-danger:focus, .btn-default:focus {
+    box-shadow: none;
+  }
+}

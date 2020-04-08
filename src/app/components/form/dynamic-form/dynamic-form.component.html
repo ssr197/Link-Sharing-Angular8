@@ -1,0 +1,3 @@
+<form [formGroup]="form" class="form-row" (submit)="onSubmit($event)">
+    <div *ngFor="let field of fields" dynamicField [field]="field" [group]="form"></div>
+</form>

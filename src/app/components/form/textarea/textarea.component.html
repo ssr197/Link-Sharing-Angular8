@@ -1,0 +1,10 @@
+<div class="form-group" [formGroup]="group" [id]="field.fieldId">
+  <label>{{field.displayCode}}</label>
+  <!--<input [formControlName]="field.fieldName" [placeholder]="field.displayCode" [type]="field.inputType" class="form-control">-->
+  <textarea [formControlName]="field.fieldName" name= "{{field.fieldName}}" [placeholder]="field.displayCode" [(ngModel)]="field.defaultValue" class="form-control"></textarea>
+  <div *ngFor="let validation of field.validations;">
+    <small class="pv-block" *ngIf="group.controls[field.fieldName].hasError(validation.name) && group.controls[field.fieldName].touched" class="text-danger">
+      {{validation.message}}
+    </small>
+  </div>
+</div>

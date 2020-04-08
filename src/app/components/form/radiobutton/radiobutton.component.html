@@ -1,0 +1,9 @@
+<div class="" [formGroup]="group" [id]="field.fieldId" *ngIf="field.isVisibleByDefault">
+  <label class="clearfix radio-label-padding">{{field.displayCode}}:</label>
+  <div class="form-check form-check-inline" *ngFor="let item of field.options">
+    <label class="form-check-label">
+      <input class="form-check-input" type="radio" [(ngModel)]="field.defaultValue" name= "{{field.fieldName}}" [formControlName]="field.fieldName" [value]="item">
+      {{item}}
+    </label>
+  </div>
+</div>

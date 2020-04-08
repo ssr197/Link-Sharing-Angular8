@@ -1,0 +1,7 @@
+<div class="form-group" [formGroup]="group" [id]="field.fieldId">
+  <label>{{field.displayCode}}</label>
+  <div class="custom-file">
+    <input type="file" [formControlName]="field.fieldName" name= "{{field.fieldName}}" class="custom-file-input" id="customFile">
+    <label class="custom-file-label" for="customFile">Attach a file</label>
+  </div>
+</div>

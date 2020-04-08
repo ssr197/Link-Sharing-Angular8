@@ -1,0 +1,3 @@
+<div [formGroup]="group" [hidden]="!field.isVisibleByDefault">
+  <button type="button" class="btn badge badge-blue {{field.className}}" title="{{field.displayCode}}" (click)="openModal($event)"><i class="{{field.otherProperties.icon}}"></i> {{field.otherProperties.iconText}}</button>
+</div>

@@ -1,0 +1,3 @@
+<ul *ngIf="shortcutTools" class="pvgfp-shortcutTools">
+  <li *ngFor="let tool of toolsJson; let i = index" title="{{tool.label}}" class="{{tool.className}}" [ngClass]="tool.active?'text-primary':''" (click)="selectTool(i)"><i class="{{tool.icon}}"></i> {{tool.iconText}}</li>
+</ul>

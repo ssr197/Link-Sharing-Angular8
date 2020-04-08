@@ -1,0 +1,105 @@
+@import "../variables/base";
+
+.pagination > li {
+  &:first-child > {
+    a, span {
+      border-bottom-left-radius: 15px;
+      border-top-left-radius: 15px;
+      background: linear-gradient(to bottom, #dae6ec, #98a1a6);
+      box-shadow: 0px 2px 3px #aaa;
+      border: 0;
+    }
+  }
+  &:last-child > {
+    a, span {
+      border-bottom-right-radius: 15px;
+      border-top-right-radius: 15px;
+      background: linear-gradient(to bottom, #dae6ec, #98a1a6);
+      box-shadow: 0px 2px 3px #aaa;
+      border: 0;
+    }
+  }
+  > {
+    a, span {
+      background: linear-gradient(to bottom, #dae6ec, #98a1a6);
+      box-shadow: 0px 2px 3px #aaa;
+      border: 0;
+      color: $darkGrey;
+    }
+    a:focus, span:focus {
+      border: 0;
+      box-shadow: none;
+      background: #dae6ec;
+    }
+  }
+}
+
+.pagination-split li {
+  margin-left: 0px;
+  display: inline-block;
+  float: left;
+  &:first-child {
+    margin-left: 0;
+  }
+  a {
+    /*-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;*/
+  }
+}
+
+.pagination {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  > .active > {
+    a, span, a:focus, span:focus {
+      background: linear-gradient(to bottom, #81c341, #447631);
+      border: 0;
+    }
+  }
+  .disabled > {
+    a {
+      background: linear-gradient(to bottom, #dae6ec, #98a1a6);
+      opacity: 0.9;
+      border: 0;
+      box-shadow: 0px 2px 3px #aaa;
+      &:focus {
+        background: linear-gradient(to bottom, #dae6ec, #98a1a6);
+        opacity: 0.9;
+        border: 0;
+        box-shadow: 0px 2px 3px #aaa;
+      }
+    }
+    span {
+      background: linear-gradient(to bottom, #dae6ec, #98a1a6);
+      opacity: 0.9;
+      border: 0;
+      box-shadow: 0px 2px 3px #aaa;
+    }
+  }
+}
+
+div.dataTables_paginate{
+  margin:5px 0 10px 0;
+  ul.pagination {
+    >li{
+      display: inline !important;
+      padding: 0px !important;
+      border: 0px !important;
+      margin: 0px !important;
+      &:hover{
+        border: 0px solid transparent !important;
+      }
+      a{
+        float: none !important;
+      }
+    }
+    li.active a{
+      z-index: 1 !important;
+    }
+  }
+}
+
+.dataTable_hidden-count .dataTables_length{
+  display: none;
+}

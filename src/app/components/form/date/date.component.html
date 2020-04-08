@@ -1,0 +1,23 @@
+<div class="form-group" [formGroup]="group" [id]="field.fieldId">
+  <label>{{field.displayCode}}</label>
+  <div class="input-group">
+    <!--<input class="form-control" placeholder="DD-MMM-YYYY" ngx-mydatepicker-->
+    <!--[formControlName]="field.fieldName" [type]="field.inputType"  (dateChanged)="onDateChanged($event)"/>-->
+    <input class="form-control" [(ngModel)]="field.defaultValue"  name= "{{field.fieldName}}" placeholder="DD-MMM-YYYY" ngx-mydatepicker [formControlName]="field.fieldName"
+           name="datepicker" [type]="field.inputType" [options]="dateOptions" #dp="ngx-mydatepicker" (dateChanged)="onDateChanged($event)"/>
+
+    <span class="input-group-btn">
+        <!--<button type="button" class="btn btn-primary" (click)="dp.clearDate()">-->
+      <!--<i class="glyphicon glyphicon-remove"></i>-->
+      <!--</button>-->
+        <button type="button" class="btn btn-primary" (click)="dp.toggleCalendar()">
+            <i class="glyphicon glyphicon-calendar"></i>
+        </button>
+    </span>
+  </div>
+  <div *ngFor="let validation of field.validations;">
+    <small class="pv-block" *ngIf="group.controls[field.fieldName].hasError(validation.name) && group.controls[field.fieldName].touched" class="text-danger">
+      {{validation.message}}
+    </small>
+  </div>
+</div>

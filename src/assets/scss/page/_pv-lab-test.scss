@@ -1,0 +1,283 @@
+.#{$prefix}labtest-table {
+  border-width: 0px;
+  border-bottom-width: 1px;
+  margin-bottom: 0px !important;
+  >thead {
+    >tr {
+      >th {
+        border-bottom-width: 0px !important;
+        height: 40px !important;
+        background: #e5e5e5 !important;
+        padding: 5px 3px;
+        font-weight: normal;
+        &:first-child {
+          max-width: 30px;
+          width: 30px;
+          background: #e8e8e8;
+          position: absolute;
+          z-index: 5;
+          text-align: center;
+        }
+        &:nth-child(3) {
+          margin-left: 213px;
+          min-width: 170px;
+          max-width: 170px;
+          width: 170px;
+        }
+      }
+      >td {
+        padding: 5px 3px;
+      }
+    }
+    > {
+      >tr {
+        >th {
+          &:first-child {
+            height: 41px !important;
+          }
+        }
+      }
+    }
+  }
+  >tbody {
+    >tr {
+      >td {
+        min-height: 141px;
+        padding: 0px !important;
+        &:first-child {
+          max-width: 30px;
+          width: 30px;
+          background: #e8e8e8;
+          position: absolute;
+          z-index: 5;
+          text-align: center;
+          min-height: 141px;
+        }
+        &:nth-child(3) {
+          margin-left: 213px;
+          min-width: 170px;
+          max-width: 170px;
+          width: 170px;
+        }
+      }
+      >td.active {
+        background: #d6d9db;
+      }
+      >.test-name-col {
+        min-height: 141px;
+      }
+    }
+    >tr.curr-record {
+      background: transparent !important;
+      background-color: transparent !important;
+    }
+  }
+  .test-name-col {
+    max-width: 185px;
+    background: #e3e4e5;
+    position: absolute;
+    width: 185px;
+    z-index: 5;
+    left: 33px;
+    .test-has-name {
+      width: 100%;
+      height: 140px;
+      padding: 10px 6px;
+      max-height: 140px;
+    }
+  }
+  .test-date-col {
+    min-width: 170px;
+    max-width: 170px;
+    width: 170px;
+    display: inline-block;
+    border-left: 0px;
+    border-top: 0px;
+    .test-date-inner {
+      position: relative;
+      a.del-td {
+        display: none;
+        position: absolute;
+      }
+    }
+    &:hover {
+      .test-date-inner {
+        a.del-td {
+          position: absolute;
+          background: #fff;
+          top: 0px;
+          padding: 0px 1px;
+          line-height: 11px;
+          right: 0px;
+          font-size: 10px;
+          display: inline-block;
+        }
+      }
+    }
+    .checkbox {
+      margin-top: 3px;
+      margin-bottom: -3px;
+      padding-left: 15px;
+      min-height: 20px;
+    }
+    .test-no-data {
+      a.add-test-ic {
+        min-width: 100%;
+        min-height: 100%;
+        text-align: center;
+        margin: 0px auto;
+        padding: 17px 0;
+        opacity: 0;
+        transition: all 0.5s;
+        color: #969696;
+        font-size: 16px;
+        display: block;
+        line-height: 80px;
+      }
+      &:hover {
+        a.add-test-ic {
+          color: #505458;
+          opacity: 1;
+          font-size: $appFontSizeXlg;
+        }
+      }
+      width: 100%;
+      height: 140px;
+      padding: 10px 6px;
+      vertical-align: middle;
+    }
+    .test-date-block {
+      &:focus {
+        background-color: #ccc;
+      }
+    }
+    .test-has-data {
+      width: 100%;
+      height: 140px;
+      padding: 10px 6px;
+      background: #f9f9f9;
+    }
+    textarea.form-control {
+      height: 80px;
+    }
+  }
+  a.table-row-del {
+    font-size: 11px;
+    margin: 5px 0;
+    display: block;
+    text-align: center;
+  }
+  .add-lab-bot {
+    margin-bottom: 0px;
+    font-weight: bold;
+    position: absolute;
+    background: #cecece;
+    bottom: 0px;
+    width: 100%;
+    display: none;
+  }
+  tr {
+    td {
+      .num {
+        padding-top: 10px;
+        display: block;
+      }
+    }
+  }
+}
+.test-name-head {
+  max-width: 214px;
+  background: #c7c8c9;
+  margin: -3px 0px -3px -5px;
+  padding: 13px 6px;
+  border-radius: 8px 0 0 0;
+}
+.#{$prefix}testzi-plus {
+  z-index: 9 !important;
+}
+.#{$prefix}labtest-grid-listview {
+  thead{
+    .num-col{
+      min-width: 30px;
+    }
+    .lt-col{
+      width:32%;
+      min-width: 32%;
+    }
+    .rt-col{
+      width:68%;
+      min-width: 68%;
+      padding-left: 0px;
+    }
+  }
+  .row-table {
+    .del-test>.remove-section{
+      display: none;
+    }
+    &:hover{
+      .del-test > .remove-section {
+        display: inline-block;
+        font-size: 12px;
+      }
+    }
+  }
+  .#{$prefix}labtest-col-date{
+    min-width: 150px;
+  }
+  .testReportRow{
+    padding-left: 0px;
+    .test-date-row {
+      >.testDate{
+        min-width: 150px;
+      }
+      padding: 3px;
+      margin-right: -8px;
+      margin-left: -8px;
+
+      &:first-child {
+        margin-top: -3px;
+      }
+      &:last-child {
+        margin-bottom: -3px;
+      }
+      .del-test-report {
+        display: none;
+      }
+      &:hover .del-test-report{
+        display: inline-block;
+        font-size: 12px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+.table-show-bot-btn {
+  >tbody {
+    >tr {
+      &:last-child {
+        >td {
+          .add-lab-bot {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.#{$prefix}labtest-table .test-date-col .datepicker .dropdown-menu {
+  right: 0 !important;
+  left: auto !important;
+}
+.lab-test-head {
+  .lbl-required {
+    margin-right: 10px;
+  }
+  .lbl-required-set {
+    color: #ff9f0f;
+    font-size: 15px;
+    font-weight: 700;
+    position: relative;
+    margin-right: 10px;
+  }
+}

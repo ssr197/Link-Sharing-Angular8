@@ -3,7 +3,6 @@ import { MenuItems } from './core/menu/menu-items/menu-items';
 import { PageTitleService } from './core/page-title/page-title.service';
 import { SpinnerService } from './service/spinner.service';
 import { TranslateService } from 'ng2-translate/ng2-translate';
-// import {MediaChange, ObservableMedia} from "@angular/flex-layout";
 import { AuthenticationService } from './_authServices';
 import { User } from './_models';
 import { Subscription } from 'rxjs/Subscription';
@@ -83,9 +82,9 @@ export class AppComponent {
       this.showLoader = val;
     });
 
-    this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
-        this.url = event.url;
-    });
+    // this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
+    //     this.url = event.url;
+    // });
 
     if (this.currentUser) {
         const elemSidebar = <HTMLElement>document.querySelector('.sidebar-container ');
@@ -152,11 +151,6 @@ toggleFullscreen() {
   }
 }
 
-logout() {
-  this.authenticationService.logout();
-  this.router.navigate(['/login']);
-}
-
 customizerFunction() {
     this.customizerIn = !this.customizerIn;
 }
@@ -176,15 +170,6 @@ changeThemeColor(color){
 }
 
 addMenuItem(): void {
-    // this.menuItems.add({
-    //     state: 'pages',
-    //     name: 'pv MENU',
-    //     type: 'sub',
-    //     icon: 'icon-plus icons',
-    //     children: [
-    //         {state: 'blank', name: 'SUB MENU1'}
-    //     ]
-    // });
 }
 
 

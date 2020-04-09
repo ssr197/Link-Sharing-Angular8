@@ -6,11 +6,8 @@
                 <div class="sidebar-panel pv-sidenav">
                     <div class="sidebar-logo-wrap">
                         <div class="sidebar-logo d-flex">
-                            <!--<div class="logo-sign">-->
-                            <!--<img src="assets/img/pv-logo.png" width="60">-->
-                            <!--</div>-->
                             <div class="logo-text mr-2 ml-2 align-self-center">
-                                <img src="assets/img/pv-adm-logo.png" width="104">
+                                <img src="assets/img/linkSharingLogo.png" width="104">
                             </div>
                         </div>
                     </div>
@@ -42,15 +39,6 @@
                                         </ul>
                                     </li>
                                 </ul>
-                                <!--<ul class="add-dynamic-menu list-style-none">-->
-                                <!--<li>-->
-                                <!--<a (click)="addMenuItem()">-->
-                                <!--<i class="fa fa-plus" aria-hidden="true"></i>-->
-                                <!--<span>Add</span>-->
-                                <!--</a>-->
-                                <!--</li>-->
-                                <!--</ul>-->
-
                             </nav>
                         </div>
                     </div>
@@ -91,45 +79,13 @@
                                             <i class="md md-apps"></i>
                                         </a>
                                         <div class="dropdown-menu rounded-0 dropdown-menu-right dropdown-menu-lg p-0" aria-labelledby="navbarD">
-                                            <div class="dropdown-header bg-success d-flex justify-content-between"><span class="align-self-center">RxLogix PV Suits</span></div>
+                                            <div class="dropdown-header bg-success d-flex justify-content-between"><span class="align-self-center">More similar app</span></div>
                                             <a class="dropdown-item pt-3" routerLink="/">
                                                 <div class="icon-area">
                                                     <i class="md md-apps"></i>
                                                 </div>
-                                                <small>PV Intake</small>
+                                                <small>Redirect to other app</small>
                                             </a>
-
-                                            <a class="dropdown-item pt-3" routerLink="/">
-                                                <div class="icon-area">
-                                                    <i class="md md-apps"></i>
-                                                </div>
-                                                <small>PV Report</small>
-                                            </a>
-                                            <a class="dropdown-item pt-3" routerLink="/">
-                                                <div class="icon-area ">
-                                                    <i class="md md-apps"></i>
-                                                </div>
-                                                <small> PV Signal</small>
-                                            </a>
-                                            <a class="dropdown-item pt-3" routerLink="/">
-                                                <div class="icon-area ">
-                                                    <i class="md md-apps"></i>
-                                                </div>
-                                                <small>PV Central</small>
-                                            </a>
-                                            <a class="dropdown-item pt-3" routerLink="/">
-                                                <div class="icon-area ">
-                                                    <i class="md md-apps"></i>
-                                                </div>
-                                                <small>PV Publisher</small>
-                                            </a>
-                                            <a class="dropdown-item pt-3" routerLink="/">
-                                                <div class="icon-area ">
-                                                    <i class="md md-apps"></i>
-                                                </div>
-                                                <small>PV Risk Manager</small>
-                                            </a>
-
                                         </div>
                                     </li>
                                     <li class="d-none-sm dropdown">
@@ -212,7 +168,7 @@
                                             <div class="online-caret bg-success circle"><i class="fa fa-caret-down"></i></div>
                                         </a>
                                         <div class="dropdown-menu rounded-0 dropdown-menu-right p-0" aria-labelledby="navbarDropdownMenuLin">
-                                            <div class="text-center text-primary"><small>Welcome Ritesh Singh!</small></div>
+                                            <div class="text-center text-primary"><small>Welcome Saurabh Kumar!</small></div>
                                             <a class="dropdown-item  d-flex pt-3" routerLink="/user-pages/userprofile">
                                                 <div class="icon-area  align-self-start">
                                                     <i class="fa fa-user"></i>
@@ -225,7 +181,7 @@
                                                 <div class="icon-area align-self-start">
                                                     <i class="fa fa-power-off"></i>
                                                 </div>
-                                                <div class="icon-msg ml-2 mr-2"> <span class="align-self-start d-block "><a class="nav-item nav-link" (click)="logout()">Logout</a></span>
+                                                <div class="icon-msg ml-2 mr-2"> <span class="align-self-start d-block "><a class="nav-item nav-link">Logout</a></span>
                                                 </div>
                                             </a>
                                         </div>
@@ -242,18 +198,12 @@
                 <div class="pv-base-container" #scrollContainer>
                     <div class="justify-content-between align-items-center page-info d-none-sm" [hidden]="!currentUser">
                         <span class="navbar-brand">{{header | translate}}</span>
-                        <span class="navbar-brand pull-right">
-                          <app-pvfgp-shortcut-tools *ngIf="showshortcutTools" [shortcutTools]="showshortcutTools"></app-pvfgp-shortcut-tools>
-                        </span>
                     </div>
                     <div class="inner-container">
-                        <alert></alert>
                         <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
                     </div>
                 </div>
-                <!-- pv base container closed -->
             </section>
-            <!-- main content closed -->
         </div>
     </ng-sidebar-container>
 
@@ -261,7 +211,6 @@
         <a class="customizer-toggle bg-primary faa-parent animated-hover" (click)="customizerFunction()">
             <i class="fa fa-wrench faa-slow faa-wrench" aria-hidden="true"></i>
         </a>
-        <!-- Nav tabs -->
         <div class="settings-panel">
             <div class="theme-options">
                 <div class="theme-head">
@@ -290,20 +239,9 @@
                     <label class="form-check-label">
                   <input [(ngModel)]="boxed" class="form-check-input" type="checkbox" value=""> Boxed Layout <img class="mt-2" src="assets/img/boxed-layout.png" alt=""></label>
                 </div>
-                <!--<div class="layout-item form-check">-->
-                <!--<label class="form-check-label">-->
-                <!--<input [(ngModel)]="dark" class="form-check-input" type="checkbox" value=""> Dark Mode <img class="mt-2" src="assets/img/nightmode.png" alt=""></label>-->
-                <!--</div>-->
-                <!--<div class="layout-item form-check">-->
-                <!--<label class="form-check-label">-->
-                <!--<input (change)="root.dir = (root.dir == 'rtl' ? 'ltr' : 'rtl')" class="form-check-input" type="checkbox" value=""> RTL    <img class="mt-2" src="assets/img/RTL.png" alt=""></label>-->
-                <!--</div>-->
             </div>
-            <!-- theme option closed -->
         </div>
-        <!-- setting panel Closed -->
     </div>
-    <!-- pv customize closed -->
     <div class="chat-sidebar-pan" *ngIf="currentUser">
         <div class="settings-panel">
             <ul class="nav nav-tabs" role="tablist">

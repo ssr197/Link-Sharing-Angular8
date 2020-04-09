@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild, HostListener, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MenuItems } from './core/menu/menu-items/menu-items';
 import { PageTitleService } from './core/page-title/page-title.service';
 import { SpinnerService } from './service/spinner.service';
@@ -6,15 +6,11 @@ import { TranslateService } from 'ng2-translate/ng2-translate';
 import { AuthenticationService } from './_authServices';
 import { User } from './_models';
 import { Subscription } from 'rxjs/Subscription';
-import PerfectScrollbar from 'perfect-scrollbar';
-import { NavigationCancel,
- Event,
-        NavigationEnd,
-        NavigationError,
-        NavigationStart,
-        Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
+
 declare var require: any;
 const screenfull = require('screenfull');
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -60,12 +56,10 @@ export class AppComponent {
      }
 
   constructor(public menuItems: MenuItems, private pageTitleService: PageTitleService, private _spinnerService: SpinnerService, public translate: TranslateService, private router: Router, private authenticationService: AuthenticationService) {
-    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     translate.addLangs(['en', 'fr']);
     translate.setDefaultLang('en');
     const browserLang: string = translate.getBrowserLang();
     translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
-
   }
 
   ngOnInit() {
@@ -81,21 +75,6 @@ export class AppComponent {
     this._spinnerService.status.subscribe((val: boolean) => {
       this.showLoader = val;
     });
-
-    // this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
-    //     this.url = event.url;
-    // });
-
-    if (this.currentUser) {
-        const elemSidebar = <HTMLElement>document.querySelector('.sidebar-container ');
-
-        /** Perfect scrollbar for sidebar menu **/
-        if (window.matchMedia(`(min-width: 960px)`).matches) {
-          new PerfectScrollbar(elemSidebar, { wheelSpeed: 2, suppressScrollX: true });
-
-        }
-    }
-
 
     this._routerEventsSubscription = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd && this.isMobile) {
@@ -119,63 +98,60 @@ export class AppComponent {
     }).blur(function () {
         $(this).parent().removeClass('search-active');
     });
-}
-
-
-ngOnDestroy() {
-    this._router.unsubscribe();
-    this._mediaSubscription.unsubscribe();
-}
-
-isFullscreen: boolean = false;
-
-menuMouseOver(): void {
-    if (window.matchMedia(`(min-width: 960px)`).matches && this.collapseSidebar) {
-        this._mode = 'over';
-    }
-}
-
-menuMouseOut(): void {
-    if (window.matchMedia(`(min-width: 960px)`).matches && this.collapseSidebar) {
-        this._mode = 'push';
-    }
-}
-
-toggleFullscreen() {
-  if (screenfull.isEnabled) {
-    screenfull.toggle();
-    this.isFullscreen = !this.isFullscreen;
-    screenfull.on('change', () => {
-      this.isFullscreen = screenfull.isFullscreen ? true : false;
-    });
   }
-}
-
-customizerFunction() {
-    this.customizerIn = !this.customizerIn;
-}
- chatWindowFunction() {
-    this.chatWindowOpen = !this.chatWindowOpen;
-}
-
-chatSidebarFunction(){
-    this.chatSidebar = !this.chatSidebar;
-}
- sidebarClosedFunction(){
-    this.sidebarClosed = !this.sidebarClosed;
-}
-
-changeThemeColor(color){
-    this.themeSkinColor = color;
-}
-
-addMenuItem(): void {
-}
 
 
+  ngOnDestroy() {
+      this._router.unsubscribe();
+      this._mediaSubscription.unsubscribe();
+  }
 
-onActivate(e, scrollContainer) {
-    scrollContainer.scrollTop = 0;
-}
+  isFullscreen: boolean = false;
 
+  menuMouseOver(): void {
+      if (window.matchMedia(`(min-width: 960px)`).matches && this.collapseSidebar) {
+          this._mode = 'over';
+      }
+  }
+
+  menuMouseOut(): void {
+      if (window.matchMedia(`(min-width: 960px)`).matches && this.collapseSidebar) {
+          this._mode = 'push';
+      }
+  }
+
+  toggleFullscreen() {
+    if (screenfull.isEnabled) {
+      screenfull.toggle();
+      this.isFullscreen = !this.isFullscreen;
+      screenfull.on('change', () => {
+        this.isFullscreen = screenfull.isFullscreen ? true : false;
+      });
+    }
+  }
+
+  customizerFunction() {
+      this.customizerIn = !this.customizerIn;
+  }
+  chatWindowFunction() {
+      this.chatWindowOpen = !this.chatWindowOpen;
+  }
+
+  chatSidebarFunction(){
+      this.chatSidebar = !this.chatSidebar;
+  }
+  sidebarClosedFunction(){
+      this.sidebarClosed = !this.sidebarClosed;
+  }
+
+  changeThemeColor(color){
+      this.themeSkinColor = color;
+  }
+
+  addMenuItem(): void {
+  }
+
+  onActivate(e, scrollContainer) {
+      scrollContainer.scrollTop = 0;
+  }
 }

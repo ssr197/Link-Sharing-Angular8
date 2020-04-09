@@ -26,6 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { JwtInterceptor, ErrorInterceptor, fakeBackendProvider } from './_helpers';
 import { PageSpinnerComponent } from './components/spinner/page-spinner/page-spinner.component';
 import { ToastrModule } from 'ngx-toastr';
+import { LsLoginComponent } from './components/ls-login/ls-login.component';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateStaticLoader(http, 'assets/i18n', '.json');
@@ -40,7 +41,8 @@ const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
     AppComponent,
     PvgfpAddFormComponent,
     PvgfpListFormsComponent,
-    PageSpinnerComponent
+    PageSpinnerComponent,
+    LsLoginComponent
   ],
   entryComponents: [
   ],

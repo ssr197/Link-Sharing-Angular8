@@ -1,0 +1,27 @@
+<div id="loginStyle">
+  <div id="loginTable" class="">
+      <div id="loginHeader">
+          <div class="pvLogo">
+              <img src="assets/img/linkSharingLogo.png" class="loginLogo" alt="PV Intake">
+          </div>
+          <div class="header-lbl">
+              Log in
+          </div>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+              <input type="text" placeholder="Username" formControlName="username" class="form-control"/>
+          </div>
+          <div class="form-group login-pass">
+              <input type="password" placeholder="Password" formControlName="password" class="form-control"/>
+          </div>
+
+          <div>
+            <a (click)="forgetPassword()">Forget Password</a>
+        </div>
+          <div id="loginFooter" class="loginFooter">
+              <button class="btn btn-primary">Login</button>
+          </div>
+      </form>
+  </div>
+</div>

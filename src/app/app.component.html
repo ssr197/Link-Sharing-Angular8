@@ -2,7 +2,7 @@
     [class.sidebar-closed]="sidebarClosed" [class.chat-sidebar]="chatSidebar">
     <ng-sidebar-container>
         <div ng-sidebar-content>
-            <ng-sidebar #sidenav [(opened)]="_opened" [(mode)]="_mode" [(closeOnClickOutside)]="_closeOnClickOutside" [(showBackdrop)]="_showBackdrop" [hidden]="!currentUser">
+            <ng-sidebar #sidenav [(opened)]="_opened" [(mode)]="_mode" [(closeOnClickOutside)]="_closeOnClickOutside" [(showBackdrop)]="_showBackdrop">
                 <div class="sidebar-panel pv-sidenav">
                     <div class="sidebar-logo-wrap">
                         <div class="sidebar-logo d-flex">
@@ -47,7 +47,7 @@
             </ng-sidebar>
             <section class="main-contents">
                 <app-page-spinner *ngIf="showLoader"></app-page-spinner>
-                <header class="main-header" [hidden]="!currentUser">
+                <header class="main-header">
                     <div class="d-flex justify-content-between align-items-center pv-header-toolbar w-100">
                         <div class="h-100 d-flex align-items-center col-sm-6 col-md-6 col-lg-6 pl-0 pr-0">
                             <div class="h-100 d-flex justify-content-start align-items-center">
@@ -196,7 +196,7 @@
                 </header>
                 <!-- main header closed -->
                 <div class="pv-base-container" #scrollContainer>
-                    <div class="justify-content-between align-items-center page-info d-none-sm" [hidden]="!currentUser">
+                    <div class="justify-content-between align-items-center page-info d-none-sm">
                         <span class="navbar-brand">{{header | translate}}</span>
                     </div>
                     <div class="inner-container">
@@ -207,7 +207,7 @@
         </div>
     </ng-sidebar-container>
 
-    <div *ngIf="currentUser" class="pv-customizer">
+    <div class="pv-customizer">
         <a class="customizer-toggle bg-primary faa-parent animated-hover" (click)="customizerFunction()">
             <i class="fa fa-wrench faa-slow faa-wrench" aria-hidden="true"></i>
         </a>
@@ -242,7 +242,7 @@
             </div>
         </div>
     </div>
-    <div class="chat-sidebar-pan" *ngIf="currentUser">
+    <div class="chat-sidebar-pan">
         <div class="settings-panel">
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">

@@ -16,36 +16,49 @@ export interface Menu {
 
 const MENUITEMS = [
   {
-    state: 'form-list',
-    name: 'DASHBOARD',
+    state: 'home',
+    name: 'HOME',
     type: 'link',
     icon: 'md md-view-dashboard'
   },
   {
-    state: 'form-add',
-    name: 'ADD NEW FORM',
+    state: 'profile',
+    name: 'PROFILE',
+    type: 'link',
+    icon: 'md md-file-plus',
+  },
+  {
+    state: 'newItem',
+    name: 'ADD NEW',
     type: 'link',
     icon: 'md md-file-plus',
   }
-
-  // {
-  //   state: 'pv-form',
-  //   name: 'Forms',
-  //   type: 'sub',
-  //   icon: 'icon-note icons',
-  //   children: [
-  //     {state: 'Add', name: 'Add'},
-  //     {state: 'Edit', name: 'Edit'},
-  //   ]
-  // },
 ];
+
+const logOutItem = [
+  {
+    state: 'login',
+    name: 'Login',
+    type: 'link',
+    icon: 'md md-view-dashboard'
+  },
+  {
+    state: 'signup',
+    name: 'Sign Up',
+    type: 'link',
+    icon: 'md md-file-plus',
+  }
+];
+
+
 
 @Injectable()
 export class MenuItems {
   getAll(): Menu[] {
     return MENUITEMS;
   }
-  // add(menu: Menu) {
-  //   MENUITEMS.push(menu);
-  // }
+
+  getAllLogout(): Menu[] {
+    return logOutItem;
+  }
 }

@@ -19,7 +19,8 @@ const screenfull = require('screenfull');
 })
 export class AppComponent {
   title = 'PV Generic Form Parser';
-  currentUser: User;
+  // currentUser: User;
+  currentUser = true;
   private _router: Subscription;
     header: string;
     showshortcutTools: boolean = false;

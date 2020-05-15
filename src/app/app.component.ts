@@ -2,7 +2,6 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MenuItems } from './core/menu/menu-items/menu-items';
 import { PageTitleService } from './core/page-title/page-title.service';
 import { SpinnerService } from './service/spinner.service';
-import { AuthenticationService } from './_authServices';
 import { User } from './_models';
 import { Subscription } from 'rxjs/Subscription';
 import { NavigationEnd, Router } from '@angular/router';
@@ -59,7 +58,7 @@ export class AppComponent {
     private pageTitleService: PageTitleService,
     private _spinnerService: SpinnerService,
     private router: Router,
-    private authenticationService: AuthenticationService) {
+    ) {
   }
 
   ngOnInit() {

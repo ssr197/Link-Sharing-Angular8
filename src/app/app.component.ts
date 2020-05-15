@@ -2,7 +2,6 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MenuItems } from './core/menu/menu-items/menu-items';
 import { PageTitleService } from './core/page-title/page-title.service';
 import { SpinnerService } from './service/spinner.service';
-import { TranslateService } from 'ng2-translate/ng2-translate';
 import { AuthenticationService } from './_authServices';
 import { User } from './_models';
 import { Subscription } from 'rxjs/Subscription';
@@ -56,11 +55,11 @@ export class AppComponent {
         this._opened = !this._opened;
      }
 
-  constructor(public menuItems: MenuItems, private pageTitleService: PageTitleService, private _spinnerService: SpinnerService, public translate: TranslateService, private router: Router, private authenticationService: AuthenticationService) {
-    translate.addLangs(['en', 'fr']);
-    translate.setDefaultLang('en');
-    const browserLang: string = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
+  constructor(public menuItems: MenuItems,
+    private pageTitleService: PageTitleService,
+    private _spinnerService: SpinnerService,
+    private router: Router,
+    private authenticationService: AuthenticationService) {
   }
 
   ngOnInit() {

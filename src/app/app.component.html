@@ -1,8 +1,7 @@
-<div class="app" dir="ltr" [ngClass]="themeSkinColor" [class.app-dark]="dark" [class.boxed]="boxed" [class.collapsed-sidebar]="collapseSidebar" [class.compact-sidebar]="compactSidebar" [class.customizer-in]="customizerIn" [class.chat-window--open]="chatWindowOpen"
-    [class.sidebar-closed]="sidebarClosed" [class.chat-sidebar]="chatSidebar">
+<div class="app" dir="ltr" [ngClass]="themeSkinColor" [class.collapsed-sidebar]="collapseSidebar" [class.customizer-in]="customizerIn" [class.sidebar-closed]="sidebarClosed" [class.chat-sidebar]="chatSidebar">
     <ng-sidebar-container>
         <div ng-sidebar-content>
-            <ng-sidebar #sidenav [(opened)]="_opened" [(mode)]="_mode" [(closeOnClickOutside)]="_closeOnClickOutside" [(showBackdrop)]="_showBackdrop">
+            <ng-sidebar #sidenav [(opened)]="_opened" [(mode)]="_mode">
                 <div class="sidebar-panel pv-sidenav">
                     <div class="sidebar-logo-wrap">
                         <div class="sidebar-logo d-flex">
@@ -19,7 +18,7 @@
                                         <a menuToggle [routerLink]="['/', menuitem.state]" routerLinkActive="active-link" *ngIf="menuitem.type === 'link'">
                                             <i class="{{ menuitem.icon }}"></i>
                                             <p class="text-nowrap mb-0">
-                                                <span>{{ menuitem.name}}</span>
+                                                <span>{{menuitem.name}}</span>
                                             </p>
                                         </a>
                                     </li>
@@ -34,9 +33,9 @@
                                 <ul class="pv-nav">
                                     <li class="nav-item" menuToggleLink *ngFor="let menuitem of menuItems.getAllLogout()">
                                         <a menuToggle [routerLink]="['/', menuitem.state]" routerLinkActive="active-link" *ngIf="menuitem.type === 'link'">
-                                            <i class="{{ menuitem.icon }}"></i>
+                                            <i class="{{menuitem.icon}}"></i>
                                             <p class="text-nowrap mb-0">
-                                                <span>{{ menuitem.name}}</span>
+                                                <span>{{menuitem.name}}</span>
                                             </p>
                                         </a>
                                     </li>
@@ -46,7 +45,6 @@
                     </div>
                 </div>
             </ng-sidebar>
-
             <section class="main-contents">
                 <app-page-spinner *ngIf="showLoader"></app-page-spinner>
                 <header class="main-header">
@@ -59,7 +57,7 @@
                            </button>
                                 </div>
                             </div>
-                            <div class="h-100 pl-4 search-bar w-100 h-100 d-none-sm search-w">
+                            <div class="h-100 pl-4 search-bar w-100 h-100 d-none-sm search-w" *ngIf="currentUser">
                                 <form class="h-100 search-form">
                                     <div class="h-100 search-i">
                                         <input tourAnchor="tour-search" class="form-control" type="text" placeholder="Search" data-toggle="modal" data-target="#search-modal" />
@@ -67,7 +65,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="align-items-end pr-0 col-sm-6 col-md-6 col-lg-6">
+                        <div class="align-items-end pr-0 col-sm-6 col-md-6 col-lg-6" *ngIf="currentUser">
                             <div class="d-flex secondary-menu justify-content-end align-items-center">
                                 <ul class="nav secondary-menu-list d-flex justify-content-end align-items-center" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                                     <li tourAnchor="tour-full-screen" class="d-none-sm fullscreen-toggle" (click)="toggleFullscreen()">
@@ -75,20 +73,6 @@
                                             <i class="md md-fullscreen" *ngIf="!isFullscreen"></i>
                                             <i class="md md-fullscreen-exit" *ngIf="isFullscreen"></i>
                                         </a>
-                                    </li>
-                                    <li class="d-none-sm dropdown fav-links">
-                                        <a href="javascript:void(0)" class="rotate-90" id="navbarD" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="md md-apps"></i>
-                                        </a>
-                                        <div class="dropdown-menu rounded-0 dropdown-menu-right dropdown-menu-lg p-0" aria-labelledby="navbarD">
-                                            <div class="dropdown-header bg-success d-flex justify-content-between"><span class="align-self-center">More similar app</span></div>
-                                            <a class="dropdown-item pt-3" routerLink="/">
-                                                <div class="icon-area">
-                                                    <i class="md md-apps"></i>
-                                                </div>
-                                                <small>Redirect to other app</small>
-                                            </a>
-                                        </div>
                                     </li>
                                     <li class="d-none-sm dropdown">
                                         <a href="javascript:void(0)" id="navbarDropdownMenu" class="faa-parent animated-hover" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -196,7 +180,7 @@
                         </div>
                     </div>
                 </header>
-                <!-- main header closed -->
+                
                 <div class="pv-base-container" #scrollContainer>
                     <div class="justify-content-between align-items-center page-info d-none-sm">
                         <span class="navbar-brand">{{header}}</span>
@@ -209,7 +193,7 @@
         </div>
     </ng-sidebar-container>
 
-    <div class="pv-customizer">
+    <!-- <div class="pv-customizer">
         <a class="customizer-toggle bg-primary faa-parent animated-hover" (click)="customizerFunction()">
             <i class="fa fa-wrench faa-slow faa-wrench" aria-hidden="true"></i>
         </a>
@@ -237,131 +221,5 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="chat-sidebar-pan">
-        <div class="settings-panel">
-            <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#setting" role="tab">Settings</a>
-                </li>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane active" id="setting" role="tabpanel">
-                    <div class="system-setting">
-                        <div class="setting-header text-muted"><i class="fa fa-cog"></i> System</div>
-                        <ul class="list-style-none pl-0">
-                            <li class="d-flex justify-content-between">
-                                <div class="align-self-center">Nofications</div>
-                                <div class="onoffswitch align-self-center">
-                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch-nofications" checked>
-                                    <label class="onoffswitch-label mb-0" for="switch-nofications">
-                              <span class="onoffswitch-inner"></span>
-                              <span class="onoffswitch-switch"></span>
-                              </label>
-                                </div>
-                            </li>
-                            <li class="d-flex justify-content-between">
-                                <div class="align-self-center">Quick Results</div>
-                                <div class="onoffswitch align-self-center">
-                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch-results" checked>
-                                    <label class="onoffswitch-label mb-0" for="switch-results">
-                              <span class="onoffswitch-inner"></span>
-                              <span class="onoffswitch-switch"></span>
-                              </label>
-                                </div>
-                            </li>
-                            <li class="d-flex justify-content-between">
-                                <div class="align-self-center">Auto Updates</div>
-                                <div class="onoffswitch align-self-center">
-                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch-updates" checked>
-                                    <label class="onoffswitch-label mb-0" for="switch-updates">
-                              <span class="onoffswitch-inner"></span>
-                              <span class="onoffswitch-switch"></span>
-                              </label>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="setting-header mt-3 text-muted"> <i class="fa fa-user"></i> Account</div>
-                        <ul class="list-style-none pl-0">
-                            <li class="d-flex justify-content-between">
-                                <div class="align-self-center">Offline Mode</div>
-                                <div class="onoffswitch align-self-center">
-                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch-offline" checked>
-                                    <label class="onoffswitch-label mb-0" for="switch-offline">
-                              <span class="onoffswitch-inner"></span>
-                              <span class="onoffswitch-switch"></span>
-                              </label>
-                                </div>
-                            </li>
-                            <li class="d-flex justify-content-between">
-                                <div class="align-self-center">Location Share</div>
-                                <div class="onoffswitch align-self-center">
-                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch-location" checked>
-                                    <label class="onoffswitch-label mb-0" for="switch-location">
-                              <span class="onoffswitch-inner"></span>
-                              <span class="onoffswitch-switch"></span>
-                              </label>
-                                </div>
-                            </li>
-                            <li class="d-flex justify-content-between">
-                                <div class="align-self-center">Show Offline User</div>
-                                <div class="onoffswitch align-self-center">
-                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch-offline" checked>
-                                    <label class="onoffswitch-label mb-0" for="switch-offline">
-                              <span class="onoffswitch-inner"></span>
-                              <span class="onoffswitch-switch"></span>
-                              </label>
-                                </div>
-                            </li>
-                            <li class="d-flex justify-content-between">
-                                <div class="align-self-center">Save History</div>
-                                <div class="onoffswitch align-self-center">
-                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch-history" checked>
-                                    <label class="onoffswitch-label mb-0" for="switch-history">
-                              <span class="onoffswitch-inner"></span>
-                              <span class="onoffswitch-switch"></span>
-                              </label>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--setting panel closed -->
-    </div>
-    <!-- Modal -->
-    <div class="modal fade search-modal" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-        <div class="modal-dialog" role="document">
-            <div class="container">
-                <div class="mb-5">
-                    <input class="overlay-search" placeholder="Type Keywords ...">
-                </div>
-                <div class="search-suggestion">
-                    <span class="d-block mb-3"><strong>Search Forms by Form ID...</strong></span>
-                    <ul class="row search-list">
-                        <li class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4">
-                            FormId #001
-                        </li>
-                        <li class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4">
-                            FormId #002
-                        </li>
-                        <li class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4">
-                            FormId #003
-                        </li>
-                        <li class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4">
-                            FormId #004
-                        </li>
-                        <li class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4">
-                            FormId #005
-                        </li>
-                        <li class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4">
-                            FormId #006
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    </div> -->
 </div>

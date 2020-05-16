@@ -12,7 +12,7 @@ export class LsSignUpComponent implements OnInit {
   passwordIsFilled:boolean = false;
   passwordMatch:boolean = false;
   user = {
-    firstName: '1',
+    firstName: '',
     lastName: '',
     userName: '',
     dateOfBirth: '',

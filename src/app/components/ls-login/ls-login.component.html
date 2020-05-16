@@ -1,45 +1,48 @@
-<div class="col-sm-5 login-background pull-right">
-    <span class="heading-1">
-        Login to continue
-    </span>
+<div class="row">
+    <app-ls-public-dashboard class="col-sm-7"></app-ls-public-dashboard>
+    <div class="col-sm-5 login-background pull-right">
+        <span class="heading-1">
+            Login to continue
+        </span>
 
-    <div class="col-md-12">
-        <div class="input-class">
-            <input class="ls-input" type="email" placeholder="Email" [(ngModel)]="emailOrUsername">
-        </div>
-        
-        
-        <div class="input-class">
-            <input class="ls-input" type="password" placeholder="Password"  [(ngModel)]="password">
-        </div>
-
-        <div class="row pull-down">
-            <div class="col-sm-6">
-                <input id="ckb1" type="checkbox">
-                <label for="ckb1">
-                    Remember me
-                </label>
+        <div class="col-md-12">
+            <div class="input-class">
+                <input class="ls-input" type="email" placeholder="    Email or Username" [(ngModel)]="emailOrUsername">
+            </div>
+            
+            
+            <div class="input-class">
+                <input class="ls-input" type="password" placeholder="    Password"  [(ngModel)]="password">
             </div>
 
-            <div class="col-sm-6">
-                <a class="pull-right" (click)="forgetPassword()">Forgot Password?</a>
+            <div class="row pull-down">
+                <div class="col-sm-6">
+                    <input id="ckb1" type="checkbox">
+                    <label for="ckb1">
+                        Remember me
+                    </label>
+                </div>
+
+                <div class="col-sm-6">
+                    <a class="pull-right" (click)="forgetPassword()">Forgot Password?</a>
+                </div>
             </div>
-        </div>
 
 
-        <div class="submit-button">
-            <button class="btn btn-success login-btn full-lentgh" (click)="onSubmit()">
-                Login
-            </button>
-        </div>
-        <div class="pull-centre">
-            or
-        </div>
+            <div class="submit-button">
+                <button class="btn btn-success login-btn full-lentgh" (click)="onSubmit()">
+                    Login
+                </button>
+            </div>
+            <div class="pull-centre">
+                or
+            </div>
 
-        <div class="sign-up-button">
-            <button class="btn btn-outline-success full-lentgh" (click)="navigateToSignupPage()">
-                Or Sign Up
-            </button>
+            <div class="sign-up-button">
+                <button class="btn btn-outline-success full-lentgh" (click)="navigateToSignupPage()">
+                    Or Sign Up
+                </button>
+            </div>
         </div>
     </div>
 </div>

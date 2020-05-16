@@ -4,6 +4,7 @@ import { LsSignUpComponent } from './components/ls-sign-up/ls-sign-up.component'
 import { LsProfileComponent } from './components/ls-profile/ls-profile.component';
 import { LsHomeComponent } from './components/ls-home/ls-home.component';
 import { LsNewItemComponent } from './components/ls-new-item/ls-new-item.component';
+import { LsForgetPasswordComponent } from './components/ls-forget-password/ls-forget-password.component'
 
 
 export const routes: Routes = [
@@ -20,6 +21,12 @@ export const routes: Routes = [
   {
     path: 'signup',
     component: LsSignUpComponent,
+    // canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'forgetPassword',
+    component: LsForgetPasswordComponent,
     // canActivate: [AuthGuard]
   },
 

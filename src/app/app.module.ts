@@ -24,6 +24,8 @@ import { LsSignUpComponent } from './components/ls-sign-up/ls-sign-up.component'
 import { LsHomeComponent } from './components/ls-home/ls-home.component';
 import { LsProfileComponent } from './components/ls-profile/ls-profile.component';
 import { LsNewItemComponent } from './components/ls-new-item/ls-new-item.component';
+import { LsForgetPasswordComponent } from './components/ls-forget-password/ls-forget-password.component';
+import { LsPublicDashboardComponent } from './components/ls-public-dashboard/ls-public-dashboard.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { LsNewItemComponent } from './components/ls-new-item/ls-new-item.compone
     LsSignUpComponent,
     LsHomeComponent,
     LsProfileComponent,
-    LsNewItemComponent
+    LsNewItemComponent,
+    LsForgetPasswordComponent,
+    LsPublicDashboardComponent
   ],
   entryComponents: [
   ],

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiCallService } from '../../service/api-call.service'
 
 
 @Component({
@@ -22,7 +23,8 @@ export class LsSignUpComponent implements OnInit {
   }
 
   constructor(
-    private router: Router
+    private router: Router,
+    private _apiCallService: ApiCallService
   ) { }
 
   ngOnInit() {
@@ -33,7 +35,7 @@ export class LsSignUpComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.user);
+    this._apiCallService.signUp(this.user);
   }
 
 }

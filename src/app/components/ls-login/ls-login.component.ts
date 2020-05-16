@@ -20,9 +20,6 @@ export class LsLoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this._localCommunicationService.user.subscribe(user => {
-      console.log(user);
-    })
   }
 
   onSubmit(){
@@ -36,7 +33,7 @@ export class LsLoginComponent implements OnInit {
   }
 
   forgetPassword(){
-    alert("forget Password");
+    this.router.navigateByUrl('forgetPassword');
   }
 
   navigateToSignupPage(){

@@ -1,0 +1,58 @@
+.login-background {
+     background-color: #f7f7f7;
+     border: 1px solid grey;
+     border-radius: 1rem;
+     padding-top: 1rem;
+     padding-bottom: 1rem;
+}
+
+.heading-1 {
+     font-size: 2rem;
+     margin-left: 35%;
+     margin-right: 35%;
+}
+
+.input-class{
+     padding-top: 1rem;
+     width: 100%;
+}
+
+.ls-input{
+     width: 100%;
+     border: 2px;
+     border-radius: 5px;
+     height: 2rem;
+}
+
+.submit-button{
+     padding-top: 1rem;
+     padding-bottom: 0.25rem;
+}
+
+.sign-up-button{
+     padding-top: 0.25rem;
+     padding-bottom: 1rem;
+}
+
+.login-btn{
+     background-color: #6675df;
+     font-weight: bold;
+}
+
+.full-lentgh {
+     width: 100%;
+     border-radius: 10px;
+}
+
+.pull-centre{
+     padding-left: 50%;
+     padding-right: 50%;
+}
+
+.input-label{
+     padding-top: 0.25rem;
+     border: grey ;
+     border-top-left-radius: 5px;
+     border-bottom-left-radius: 5px;
+     background-color: #f7f7f7;
+}

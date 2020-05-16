@@ -1,8 +1,10 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MenuItems } from './core/menu/menu-items/menu-items';
 import { PageTitleService } from './core/page-title/page-title.service';
+import { LocalCommunicationService } from './service/local-communication.service'
 import { SpinnerService } from './service/spinner.service';
 import { Subscription } from 'rxjs/Subscription';
+import { Router } from '@angular/router';
 
 declare var require: any;
 const screenfull = require('screenfull');
@@ -13,6 +15,7 @@ const screenfull = require('screenfull');
   styleUrls: ['./app.component.css'] ,
   encapsulation: ViewEncapsulation.None
 })
+
 export class AppComponent {
   
   private _router: Subscription;
@@ -20,7 +23,7 @@ export class AppComponent {
 
   @ViewChild('sidenav') sidenav;
   
-  currentUser = true;
+  isUser = false;
   header: string;
   isFullscreen: boolean = false;
   collapseSidebar: boolean;
@@ -33,6 +36,8 @@ export class AppComponent {
   constructor(public menuItems: MenuItems,
     private pageTitleService: PageTitleService,
     private _spinnerService: SpinnerService,
+    private _localCommunicationService: LocalCommunicationService,
+    private router: Router
     ) {
   }
 
@@ -43,6 +48,16 @@ export class AppComponent {
     this._spinnerService.status.subscribe((val: boolean) => {
       this.showLoader = val;
     });
+
+    this._localCommunicationService.user.subscribe(message => {
+      if(!message || message == {}){
+        this.isUser = false;
+        this.router.navigateByUrl('login');
+      } else{
+        this.isUser = true;
+        this.router.navigateByUrl('home');
+      }
+    })
   }
 
   ngOnDestroy() {

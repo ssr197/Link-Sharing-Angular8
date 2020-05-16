@@ -1,3 +1,58 @@
-<p>
-  This is sign Up Page.
-</p>
+<div class="col-sm-5 login-background pull-right">
+  <span class="heading-1">
+      Sign Up
+  </span>
+
+  <div class="col-md-12">
+      <div class="input-class row">
+        <span class="col-sm-4 input-label">First Name</span>
+        <input class="ls-input col-sm-8" type="text" [(ngModel)]="user.firstName">
+      </div>
+
+      <div class="input-class row">
+        <span class="col-sm-4 input-label">Last Name</span>
+        <input class="ls-input col-sm-8" type="text" [(ngModel)]="user.lastName">
+      </div>
+
+      <div class="input-class row">
+        <span class="col-sm-4 input-label">Username</span>
+        <input class="ls-input col-sm-8" type="text" [(ngModel)]="user.userName">
+      </div>
+
+      <div class="input-class row">
+        <span class="col-sm-4 input-label">Email</span>
+          <input class="ls-input col-sm-8" type="email" [(ngModel)]="user.email">
+      </div>
+
+      <div class="input-class row">
+        <span class="col-sm-4 input-label">Birth Date</span>
+        <input class="ls-input col-sm-8" type="date" [(ngModel)]="user.dateOfBirth">          
+      </div>
+      
+      
+      <div class="input-class row">
+        <span class="col-sm-4 input-label">Password</span>
+          <input class="ls-input col-sm-8" type="password"  [(ngModel)]="user.password" (focusout)="compilePassword()">
+      </div>
+
+      <div class="input-class row">
+        <span class="col-sm-4 input-label">Confirm password</span>
+        <input class="ls-input col-sm-8" type="password"  [(ngModel)]="user.confirmPassword" (focusout)="compilePassword()">
+    </div>
+
+      <div class="submit-button">
+          <button class="btn btn-success login-btn full-lentgh" (click)="onSubmit()">
+              Sign Up
+          </button>
+      </div>
+      <div class="pull-centre">
+          or
+      </div>
+
+      <div class="sign-up-button">
+          <button class="btn btn-outline-success full-lentgh" (click)="navigateToLoginPage()">
+             Login Here
+          </button>
+      </div>
+  </div>
+</div>

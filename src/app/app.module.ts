@@ -11,6 +11,8 @@ import { routes } from './app-routing.module';
 import { DataTablesModule } from 'angular-datatables';
 import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
 import { TagInputModule } from 'ngx-chips';
+import { LocalCommunicationService } from './service/local-communication.service';
+import { ApiCallService  } from './service/api-call.service';
 import { PageTitleService } from './core/page-title/page-title.service';
 import { MenuToggleModule } from './core/menu/menu-toggle.module';
 import { MenuItems } from './core/menu/menu-items/menu-items';
@@ -57,6 +59,8 @@ import { LsNewItemComponent } from './components/ls-new-item/ls-new-item.compone
   ],
   providers: [
      PageTitleService,
+     ApiCallService,
+     LocalCommunicationService,
      MenuItems
     ],
   bootstrap: [AppComponent]

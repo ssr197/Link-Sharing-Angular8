@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { ApiCallService  } from '../../service/api-call.service';
+import { LocalCommunicationService } from '../../service/local-communication.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ls-login',
@@ -7,25 +9,38 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
   styleUrls: ['./ls-login.component.css']
 })
 export class LsLoginComponent implements OnInit {
-  loginForm:FormGroup
+  emailOrUsername: string
+  password: string;
+  user
 
   constructor(
-    private fb : FormBuilder
+    private _apiCallService: ApiCallService,
+    private _localCommunicationService: LocalCommunicationService,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    this.loginForm = this.fb.group({
-      username : new FormControl(''),
-      password : new FormControl('')
+    this._localCommunicationService.user.subscribe(user => {
+      console.log(user);
     })
   }
 
   onSubmit(){
-    console.log(this.loginForm.value);
+    this.user = this._apiCallService.login({emailOrUsername: this.emailOrUsername, password:this.password});
+    this._localCommunicationService.setUser(this.user);
+  }
+
+  logout(){
+    this.user = {}
+    this._localCommunicationService.setUser(this.user);
   }
 
   forgetPassword(){
-    console.log("forgetPassWord");
+    alert("forget Password");
+  }
+
+  navigateToSignupPage(){
+    this.router.navigateByUrl('signup');
   }
 
 }

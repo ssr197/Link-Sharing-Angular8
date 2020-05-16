@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-ls-sign-up',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LsSignUpComponent implements OnInit {
 
-  constructor() { }
+  passwordIsFilled:boolean = false;
+  passwordMatch:boolean = false;
+  user = {
+    firstName: '1',
+    lastName: '',
+    userName: '',
+    dateOfBirth: '',
+    email: '',
+    password:'',
+    confirmPassword:''
+  }
+
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  navigateToLoginPage(){
+    this.router.navigateByUrl('login');
+  }
+
+  onSubmit(){
+    console.log(this.user);
   }
 
 }

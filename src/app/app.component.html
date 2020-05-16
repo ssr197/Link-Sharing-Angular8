@@ -10,7 +10,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="sidebar-container" *ngIf="currentUser">
+                    <div class="sidebar-container" *ngIf="isUser">
                         <div class="sidenav-scrollbar-container">
                             <nav menuToggleDirective class="navigation">
                                 <ul class="pv-nav">
@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     
-                    <div class="sidebar-container" *ngIf="!currentUser">
+                    <div class="sidebar-container" *ngIf="!isUser">
                         <div class="sidenav-scrollbar-container">
                             <nav menuToggleDirective class="navigation">
                                 <ul class="pv-nav">
@@ -57,7 +57,7 @@
                            </button>
                                 </div>
                             </div>
-                            <div class="h-100 pl-4 search-bar w-100 h-100 d-none-sm search-w" *ngIf="currentUser">
+                            <div class="h-100 pl-4 search-bar w-100 h-100 d-none-sm search-w" *ngIf="isUser">
                                 <form class="h-100 search-form">
                                     <div class="h-100 search-i">
                                         <input tourAnchor="tour-search" class="form-control" type="text" placeholder="Search" data-toggle="modal" data-target="#search-modal" />
@@ -65,7 +65,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="align-items-end pr-0 col-sm-6 col-md-6 col-lg-6" *ngIf="currentUser">
+                        <div class="align-items-end pr-0 col-sm-6 col-md-6 col-lg-6" *ngIf="isUser">
                             <div class="d-flex secondary-menu justify-content-end align-items-center">
                                 <ul class="nav secondary-menu-list d-flex justify-content-end align-items-center" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                                     <li tourAnchor="tour-full-screen" class="d-none-sm fullscreen-toggle" (click)="toggleFullscreen()">
@@ -180,11 +180,7 @@
                         </div>
                     </div>
                 </header>
-                
                 <div class="pv-base-container" #scrollContainer>
-                    <div class="justify-content-between align-items-center page-info d-none-sm">
-                        <span class="navbar-brand">{{header}}</span>
-                    </div>
                     <div class="inner-container">
                         <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
                     </div>
@@ -192,34 +188,4 @@
             </section>
         </div>
     </ng-sidebar-container>
-
-    <!-- <div class="pv-customizer">
-        <a class="customizer-toggle bg-primary faa-parent animated-hover" (click)="customizerFunction()">
-            <i class="fa fa-wrench faa-slow faa-wrench" aria-hidden="true"></i>
-        </a>
-        <div class="settings-panel">
-            <div class="theme-options">
-                <div class="theme-head">
-                    <h4>Theme Settings</h4>
-                </div>
-                <div class="layout-item form-check more-theme-style mb-3">
-                    <label class="mb-3">Choose Theme Color</label>
-                    <a href="javascript:void(0)" class="theme default d-block mb-2" (click)="changeThemeColor('default')"><i class="fa fa-circle fa-lg text-blue" aria-hidden="true"></i> Default</a>
-                    <a href="javascript:void(0)" class="theme orange d-block mb-2" (click)="changeThemeColor('orange')"><i class="fa fa-circle fa-lg text-warning" aria-hidden="true"></i> Orange</a>
-                    <a href="javascript:void(0)" class="theme green d-block mb-2" (click)="changeThemeColor('green')"><i class="fa fa-circle fa-lg text-success" aria-hidden="true"></i> Green</a>
-                    <a href="javascript:void(0)" class="theme red d-block mb-2" (click)="changeThemeColor('red')"><i class="fa fa-circle fa-lg text-danger" aria-hidden="true"></i> Red</a>
-                </div>
-                <div class="layout-item form-check">
-                    <label class="form-check-label">
-                  <input [(ngModel)]="collapseSidebar" (change)="compactSidebar = false" class="form-check-input" type="checkbox" value="">
-                  Collapsed Sidebar <img class="mt-2" src="assets/img/collapsed-sidebar.png" alt="">
-                  </label>
-                </div>
-                <div class="layout-item boxed-layout-md form-check">
-                    <label class="form-check-label">
-                  <input [(ngModel)]="boxed" class="form-check-input" type="checkbox" value=""> Boxed Layout <img class="mt-2" src="assets/img/boxed-layout.png" alt=""></label>
-                </div>
-            </div>
-        </div>
-    </div> -->
 </div>
